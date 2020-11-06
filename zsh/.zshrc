@@ -1,4 +1,4 @@
-source /usr/share/zsh/scripts/zplug/init.zsh # Point to right location
+source ~/.zplug/init.zsh
 
 # Change with your preferred editor
 export EDITOR=nvim
