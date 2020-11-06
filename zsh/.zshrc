@@ -51,7 +51,7 @@ fi
 ZPLUG_USE_CACHE=true ZPLUG_LOG_LOAD_SUCCESS=false zplug load
 
 # Enable fzf key-bindings and completion after the plugins are loaded
-source /usr/share/fzf/key-bindings.zsh # Point to right location
-source /usr/share/fzf/completion.zsh # Point to right location
+# zplug "plugins/fzf", from:oh-my-zsh
+source ~/fzf.plugin.zsh
 
 neofetch

@@ -9,11 +9,13 @@
     ~/.config/nvim:
       path: nvim
       force: true
+    ~/fzf.plugin.zsh:
+      path: zsh/fzf.plugin.zsh
     ~/.zshrc:
       path: zsh/.zshrc
       force: true
     ~/.p10k.zsh:
-        path: zsh/.p10k.zsh
+      path: zsh/.p10k.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
