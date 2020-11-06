@@ -15,3 +15,7 @@ My own dotfiles.
 - neovim
 - zplug
 - zsh
+
+## Preferences
+
+- LSDeluxe
