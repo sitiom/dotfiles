@@ -19,3 +19,4 @@ My own dotfiles.
 ## Preferences
 
 - LSDeluxe
+- fd
