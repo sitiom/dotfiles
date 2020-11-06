@@ -2,18 +2,17 @@
     link:
       relink: true
       create: true
+      force: true
 
 - clean: ['~']
 
 - link:
     ~/.config/nvim:
       path: nvim
-      force: true
-    ~/fzf.plugin.zsh:
-      path: zsh/fzf.plugin.zsh
+    ~/.zsh/plugins/fzf/fzf.plugin.zsh:
+      path: zsh/.zsh/plugins/fzf/fzf.plugin.zsh
     ~/.zshrc:
       path: zsh/.zshrc
-      force: true
     ~/.p10k.zsh:
       path: zsh/.p10k.zsh
 
