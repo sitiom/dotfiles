@@ -4,8 +4,8 @@ call plug#begin('~/vimfiles/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'matze/vim-move'
-Plug 'hugolgst/vimsence'
-" Plug 'ThePrimeagen/vim-be-good' " v0.5.0 only
+" Plug 'hugolgst/vimsence'
+Plug 'ThePrimeagen/vim-be-good'
 Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'simnalamburt/vim-mundo'
