@@ -7,16 +7,3 @@
 [dbshield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat
 
 My own dotfiles.
-
-## Prerequisites
-
-- fzf
-- neofetch
-- neovim
-- zplug
-- zsh
-
-## Preferences
-
-- LSDeluxe
-- fd
