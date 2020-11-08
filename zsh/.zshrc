@@ -15,7 +15,6 @@ zplug "lib/directories", from:oh-my-zsh
 zplug "lib/git", from:oh-my-zsh
 zplug "lib/grep", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
-zplug "plugins/archlinux", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh, if:"which git"
@@ -39,11 +38,16 @@ export MODE_CURSOR_SEARCH="underline"
 export MODE_CURSOR_VISUAL="block"
 export MODE_CURSOR_VLINE="block"
 
+# Source local config
+if [[ -e ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
-	echo; zplug install
+       echo; zplug install
     fi
 fi
 

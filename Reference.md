@@ -12,3 +12,4 @@ Preferences
 
 - LSDeluxe
 - fd
+- aria2
