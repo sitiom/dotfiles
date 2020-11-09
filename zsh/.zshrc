@@ -20,8 +20,8 @@ zplug "MichaelAquilina/zsh-you-should-use"
 zplug "lib/*", from:oh-my-zsh, use:"lib/*.zsh"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
-zplug 'plugins/git', from:oh-my-zsh, if:"which git"
-zplug "plugins/git-extras", from:oh-my-zsh, if:"which git"
+zplug 'plugins/git', from:oh-my-zsh, if:"(( $+commands[git] ))"
+zplug "plugins/git-extras", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/last-working-dir", from:oh-my-zsh
 
 # Powerlevel10k Theme. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -29,9 +29,9 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Python Plugins
-zplug "plugins/pip", from:oh-my-zsh, if:"which python"
-zplug "plugins/python", from:oh-my-zsh, if:"which python"
-zplug "plugins/virtualenv", from:oh-my-zsh, if:"which python"
+zplug "plugins/pip", from:oh-my-zsh, if:"(( $+commands[python] ))"
+zplug "plugins/python", from:oh-my-zsh, if:"(( $+commands[python] ))"
+zplug "plugins/virtualenv", from:oh-my-zsh, if:"(( $+commands[python] ))"
 
 # Vim mode
 zplug "softmoth/zsh-vim-mode"
