@@ -1,22 +1,26 @@
-source ~/.zplug/init.zsh
+#!/bin/zsh -f
 
-# Change with your preferred editor
+# Preferred editor
 export EDITOR=nvim
 
+# Check if zplug is installed
+[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+source ~/.zplug/init.zsh
+
+# zplug
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+# Misc plugins
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "MichaelAquilina/zsh-you-should-use"
 
 # Support oh-my-zsh plugins and the like
-zplug "lib/clipboard", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug "lib/directories", from:oh-my-zsh
-zplug "lib/git", from:oh-my-zsh
-zplug "lib/grep", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
+zplug "lib/*", from:oh-my-zsh, use:"lib/*.zsh"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
+zplug 'plugins/git', from:oh-my-zsh, if:"which git"
 zplug "plugins/git-extras", from:oh-my-zsh, if:"which git"
 zplug "plugins/last-working-dir", from:oh-my-zsh
 
@@ -25,11 +29,11 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Python Plugins
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/virtualenv", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh, if:"which python"
+zplug "plugins/python", from:oh-my-zsh, if:"which python"
+zplug "plugins/virtualenv", from:oh-my-zsh, if:"which python"
 
-# Vim
+# Vim mode
 zplug "softmoth/zsh-vim-mode"
 export MODE_CURSOR_VIINS="blinking bar"
 export MODE_CURSOR_REPLACE="underline"
