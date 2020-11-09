@@ -17,7 +17,14 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "MichaelAquilina/zsh-you-should-use"
 
 # Support oh-my-zsh plugins and the like
-zplug "lib/*", from:oh-my-zsh, use:"lib/*.zsh"
+zplug "lib/clipboard", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/git", from:oh-my-zsh
+zplug "lib/grep", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "lib/termsupport", from:oh-my-zsh
+zplug "lib/spectrum", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug 'plugins/git', from:oh-my-zsh, if:"(( $+commands[git] ))"
