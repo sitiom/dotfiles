@@ -15,6 +15,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tomasiser/vim-code-dark'
 Plug '/usr/bin/fzf' " Point to right path
 Plug 'junegunn/fzf.vim'
+Plug 'ptzz/lf.vim'
+Plug 'VebbNix/lf-vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com/semanser/vim-outdated-plugins/pull/16 is not merged yet
 
 " Initialize plugin system

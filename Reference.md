@@ -2,6 +2,7 @@ Prerequisites
 =============
 
 - fzf
+- lf
 - neofetch
 - neovim
 - zplug

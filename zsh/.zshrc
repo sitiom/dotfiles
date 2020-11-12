@@ -1,8 +1,5 @@
 #!/bin/zsh -f
 
-# Preferred editor
-export EDITOR=nvim
-
 # Check if zplug is installed
 [ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
 source ~/.zplug/init.zsh

@@ -8,10 +8,14 @@
 - link:
     ~/.config/nvim/init.vim:
       path: nvim/init.vim
+    ~/.config/lf/lfrc:
+      path: lf/lfrc
     ~/.zsh/plugins/fzf/fzf.plugin.zsh:
       path: zsh/.zsh/plugins/fzf/fzf.plugin.zsh
     ~/.zshrc:
       path: zsh/.zshrc
+    ~/.zshenv:
+      path: zsh/.zshenv
     ~/.p10k.zsh:
       path: zsh/.p10k.zsh
 
