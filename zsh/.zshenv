@@ -1,4 +1,4 @@
-# Preferred editor
+# Defaults
 export EDITOR=nvim
 
 export LF_ICONS="\
