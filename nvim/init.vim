@@ -4,20 +4,20 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'matze/vim-move'
-" Plug 'hugolgst/vimsence'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'simnalamburt/vim-mundo'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sleuth'
 Plug 'tomasiser/vim-code-dark'
 Plug '/usr/bin/fzf' " Point to right path
 Plug 'junegunn/fzf.vim'
 Plug 'ptzz/lf.vim'
 Plug 'VebbNix/lf-vim'
+Plug 'neoclide/coc.nvim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com/semanser/vim-outdated-plugins/pull/16 is not merged yet
 
 " Initialize plugin system
