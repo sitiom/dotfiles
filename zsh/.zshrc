@@ -7,12 +7,6 @@ source ~/.zplug/init.zsh
 # zplug
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-# Misc plugins
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "MichaelAquilina/zsh-you-should-use"
-
 # Support oh-my-zsh plugins and the like
 zplug "lib/clipboard", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
@@ -23,10 +17,16 @@ zplug "lib/history", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
 zplug "lib/spectrum", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/colorize", from:oh-my-zsh
 zplug 'plugins/git', from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/git-extras", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/last-working-dir", from:oh-my-zsh
+
+# Misc plugins
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zdharma/fast-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "MichaelAquilina/zsh-you-should-use"
+zplug "gokcehan/lf", use:'etc/lfcd.sh'
 
 # Powerlevel10k Theme. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 zplug "romkatv/powerlevel10k", as:theme, depth:1
@@ -62,6 +62,8 @@ fi
 # Then, source plugins and add commands to $PATH
 ZPLUG_USE_CACHE=true ZPLUG_LOG_LOAD_SUCCESS=false zplug load
 
+# Key-bindings
+bindkey -s '^o' 'lfcd\n'
 # Enable fzf key-bindings and completion after the plugins are loaded
 # zplug "plugins/fzf", from:oh-my-zsh
 source $HOME/.zsh/plugins/fzf/fzf.plugin.zsh
