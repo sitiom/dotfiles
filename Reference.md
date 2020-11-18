@@ -9,4 +9,12 @@
 - zsh
 
 ### PowerShell
+
+#### Modules
+- oh-my-posh                          
+- posh-git                            
+- PSFzf                               
+- PSReadLine
+
+#### Scripts
 - posh-winfetch
