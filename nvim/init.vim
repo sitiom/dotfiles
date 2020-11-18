@@ -54,7 +54,8 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 set shortmess+=c
 
 let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippets', 'buffer']},
+    \{'complete_items': ['lsp', 'snippets']},
+		\{'complete_items': ['buffer']},
     \{'mode': '<c-p>'},
     \{'mode': '<c-n>'}
 \] 
