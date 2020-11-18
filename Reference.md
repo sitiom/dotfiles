@@ -1,6 +1,8 @@
 Prerequisites
 =============
 
+- bat
+- delta
 - fzf
 - lf
 - neofetch

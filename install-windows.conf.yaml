@@ -9,7 +9,7 @@
     ~/AppData/Local/nvim/init.vim:
       path: nvim/init.vim
     ~/AppData/Local/lf/lfrc:
-      path: lf/lfrc
+      path: lf/lfrc-windows
     ~/Documents/PowerShell/Scripts/lfcd.ps1:
       path: powershell/Scripts/lfcd.ps1
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1:

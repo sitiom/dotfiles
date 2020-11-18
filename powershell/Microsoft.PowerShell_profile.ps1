@@ -1,4 +1,6 @@
 # Environment Variables
+$Env:SHELL="pwsh"
+$Env:EDITOR="nvim"
 $Env:PAGER="bat --paging always"
 $Env:LF_ICONS = @(
     'tw=:'
@@ -205,6 +207,5 @@ if (Test-Path($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
 
-Clear-Host
-
-posh-winfetch.ps1
+# Clear-Host
+# posh-winfetch.ps1

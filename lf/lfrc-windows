@@ -1,0 +1,16 @@
+# Basic Settings
+set shell pwsh
+set incsearch on
+set hidden false
+set drawbox true
+set icons true
+set info size:time
+
+# Mappings
+map D delete
+map x cut
+
+cmd open &start $Env:f
+map e $&$Env:EDITOR $Env:f
+map i $Invoke-Expression "$Env:PAGER $Env:f"
+map w $&$Env:SHELL
