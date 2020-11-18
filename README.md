@@ -14,5 +14,7 @@ My own dotfiles.
 
 ## Removal
 
-- Prequisites: Python & PyYAML or powershell-yaml for PowerShell.
+- Prerequisites:
+  - Python & PyYAML or
+  - powershell-yaml for PowerShell.
 - Run `uninstall.py` or `uninstall-windows.ps1`.
