@@ -18,6 +18,8 @@
       path: zsh/.zshenv
     ~/.p10k.zsh:
       path: zsh/.p10k.zsh
+    ~/.gitconfig:
+      path: git/.gitconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
