@@ -10,9 +10,9 @@ My own dotfiles.
 
 ## Installation
 
-- `./install`
+- `./install` or `.\install-windows.ps1` in windows
 
 ## Removal
 
-- Required: Python & PyYAML
-- Run `uninstall.py`.
+- Prequisites: Python & PyYAML or powershell-yaml for PowerShell.
+- Run `uninstall.py` or `uninstall-windows.ps1`.
