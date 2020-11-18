@@ -12,6 +12,7 @@ Plug 'easymotion/vim-easymotion'
 " Interface
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/completion-nvim'
+Plug 'steelsojka/completion-buffers'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'pgdouyon/vim-evanesco'
@@ -47,9 +48,17 @@ if has('win32')
 endif
 
 " Completion options
+autocmd BufEnter * lua require'completion'.on_attach()
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 set shortmess+=c
+
+let g:completion_chain_complete_list = [
+    \{'complete_items': ['lsp', 'snippets', 'buffer']},
+    \{'mode': '<c-p>'},
+    \{'mode': '<c-n>'}
+\] 
+let g:completion_auto_change_source = 1
 
 " Setup LSP
 :lua << END
