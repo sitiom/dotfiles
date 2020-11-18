@@ -1,5 +1,7 @@
 # Defaults
 export EDITOR=nvim
+export PAGER="bat --paging always"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export LF_ICONS="\
 di=:\

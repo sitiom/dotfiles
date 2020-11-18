@@ -16,7 +16,6 @@ zplug "lib/grep", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
 zplug "lib/spectrum", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug 'plugins/git', from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/git-extras", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/last-working-dir", from:oh-my-zsh
