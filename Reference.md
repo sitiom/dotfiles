@@ -1,6 +1,4 @@
-Prerequisites
-=============
-
+## Prerequisites
 - bat
 - delta
 - fzf
@@ -9,3 +7,6 @@ Prerequisites
 - neovim
 - zplug
 - zsh
+
+### PowerShell
+- posh-winfetch
