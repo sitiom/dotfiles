@@ -10,7 +10,7 @@ My own dotfiles.
 
 ## Installation
 
-- `./install` or `.\install-windows.ps1` in windows
+- `./install` or `.\install-windows.ps1`
 
 ## Removal
 
