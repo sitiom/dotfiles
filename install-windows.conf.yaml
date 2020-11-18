@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      create: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/AppData/Local/nvim/init.vim:
+      path: nvim/init.vim
+    ~/AppData/Local/lf/lfrc:
+      path: lf/lfrc
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1:
+      path: powershell/Microsoft.PowerShell_profile.ps1
+    ~/Documents/PowerShell/Scripts/lfcd.ps1:
+      path: powershell/Scripts/lfcd.ps1
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

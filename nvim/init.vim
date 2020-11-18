@@ -21,7 +21,11 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-surround'
 
 " Integrations
-Plug '/usr/bin/fzf' " Point to right path
+if has('win32')
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+else
+	Plug 'usr/bin/fzf'
+endif
 Plug 'junegunn/fzf.vim'
 Plug 'ptzz/lf.vim'
 Plug 'VebbNix/lf-vim'
@@ -35,6 +39,13 @@ Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 
+" Set Powershell as shell in Windows
+if has('win32')
+		set shell=pwsh shellquote= shellpipe=\| shellxquote=
+		set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+		set shellredir=\|\ Out-File\ -Encoding\ UTF8
+endif
+
 " Completion options
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -42,7 +53,7 @@ set shortmess+=c
 
 " Setup LSP
 :lua << END
-local nvim_lsp = require'nvim_lsp'
+local nvim_lsp = require'lspconfig'
 nvim_lsp.vimls.setup{on_attach=require'completion'.on_attach}
 nvim_lsp.omnisharp.setup{on_attach=require'completion'.on_attach}
 END
