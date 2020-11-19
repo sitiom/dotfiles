@@ -17,11 +17,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-endwise'
 
 " Commands
 Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 " Integrations
 if has('win32')
@@ -37,10 +37,20 @@ Plug 'VebbNix/lf-vim'
 Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com/semanser/vim-outdated-plugins/pull/16 is not merged yet
 
 " Dependencies and Misc
+Plug 'tpope/vim-repeat'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
+
+" Setup Appearance
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+colorscheme codedark
+if (has("termguicolors"))
+ 	set termguicolors
+endif
 
 " Set Powershell as shell in Windows
 if has('win32')
@@ -70,25 +80,18 @@ nvim_lsp.vimls.setup{on_attach=require'completion'.on_attach}
 nvim_lsp.omnisharp.setup{on_attach=require'completion'.on_attach}
 END
 
-" Setup Appearance
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
-colorscheme codedark
-if (has("termguicolors"))
-   set termguicolors
-endif
 
 " Persistent undo
 set undofile
 set undodir=~/.vim/undo
 
 set number relativenumber
+let g:lf_replace_netrw = 1
 
 " Mappings
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
-
+" LSP mappings
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>

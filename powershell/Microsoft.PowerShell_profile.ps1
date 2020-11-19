@@ -168,7 +168,6 @@ $Env:LF_ICONS = @(
 # Modules
 Import-Module posh-git
 Import-Module oh-my-posh
-Import-Module PSFzf
 
 Set-PoshPrompt -Theme agnoster
 
@@ -187,6 +186,8 @@ function OnViModeChange {
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $function:OnViModeChange
+
+Import-Module PSFzf
 
 # Keybindings
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
