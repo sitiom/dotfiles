@@ -10,6 +10,7 @@ Plug 'matze/vim-move'
 Plug 'easymotion/vim-easymotion'
 
 " Interface
+Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/completion-nvim'
 Plug 'steelsojka/completion-buffers'
@@ -74,30 +75,52 @@ let g:completion_chain_complete_list = [
 let g:completion_auto_change_source = 1
 
 " Setup LSP
-:lua << END
+:lua << EOF
 local nvim_lsp = require'lspconfig'
-nvim_lsp.vimls.setup{on_attach=require'completion'.on_attach}
-nvim_lsp.omnisharp.setup{on_attach=require'completion'.on_attach}
-END
 
+-- Utility servers
+local map = function(type, key, value)
+	vim.fn.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true});
+end
+
+local on_attach_common = function(_)
+	print("LSP started.");
+
+	-- GOTO mappings
+	map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
+	map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>')
+	map('n','K','<cmd>lua vim.lsp.buf.hover()<CR>')
+	map('n','gr','<cmd>lua vim.lsp.buf.references()<CR>')
+	map('n','gs','<cmd>lua vim.lsp.buf.signature_help()<CR>')
+	map('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>')
+	map('n','<leader>gt','<cmd>lua vim.lsp.buf.type_definition()<CR>')
+	map('n','<leader>gw','<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+	map('n','<leader>gW','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
+	-- ACTION mappings
+	map('n','<leader>af', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+	map('n','<leader>ar',  '<cmd>lua vim.lsp.buf.rename()<CR>')
+	-- Few language severs support these three
+	map('n','<leader>=',  '<cmd>lua vim.lsp.buf.formatting()<CR>')
+	map('n','<leader>ai',  '<cmd>lua vim.lsp.buf.incoming_calls()<CR>')
+	map('n','<leader>ao',  '<cmd>lua vim.lsp.buf.outgoing_calls()<CR>')
+	-- Diagnostics mapping
+	map('n','<leader>ee', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+	map('n','<leader>en', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+	map('n','<leader>ep', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+end
+
+nvim_lsp.vimls.setup{on_attach=on_attach_common}
+nvim_lsp.omnisharp.setup{on_attach=on_attach_common}
+EOF
 
 " Persistent undo
 set undofile
 set undodir=~/.vim/undo
 
 set number relativenumber
+set smartcase ignorecase
 let g:lf_replace_netrw = 1
 
 " Mappings
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
-" LSP mappings
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
