@@ -1,4 +1,6 @@
 # Basic Settings
+set smartcase on
+set ignorecase on
 set incsearch on
 set hidden false
 set drawbox true

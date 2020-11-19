@@ -6,7 +6,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Navigation
-Plug 'matze/vim-move'
 Plug 'easymotion/vim-easymotion'
 
 " Interface
