@@ -4,12 +4,12 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 " Navigation
 Plug 'easymotion/vim-easymotion'
 
 " Interface
-Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/completion-nvim'
 Plug 'steelsojka/completion-buffers'
