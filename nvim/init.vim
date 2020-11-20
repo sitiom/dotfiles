@@ -116,9 +116,15 @@ EOF
 set undofile
 set undodir=~/.vim/undo
 
+set notimeout
 set number relativenumber
 set smartcase ignorecase
+
 let g:lf_replace_netrw = 1
+" Fix lf causing problems on Scoop ps1 shim
+if has('win32')
+	let g:lf_command_override = 'lf.exe'
+endif
 
 " Mappings
 nnoremap <F5> :MundoToggle<CR>
