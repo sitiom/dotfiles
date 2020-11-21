@@ -20,6 +20,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-signify'
+Plug 'editorconfig/editorconfig-vim'
 
 " Commands
 Plug 'simnalamburt/vim-mundo'
