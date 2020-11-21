@@ -19,6 +19,7 @@ Plug 'RishabhRD/nvim-lsputils'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-signify'
 
 " Commands
 Plug 'simnalamburt/vim-mundo'
@@ -177,6 +178,7 @@ set undodir=~/.vim/undo
 set notimeout
 set number relativenumber
 set smartcase ignorecase
+set updatetime=100
 
 let g:lf_replace_netrw = 1
 " Fix lf causing problems on Scoop ps1 shim
