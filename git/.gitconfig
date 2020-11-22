@@ -2,7 +2,7 @@
 	email = 56180050+sitiom@users.noreply.github.com
 	name = sitiom
 [core]
-	editor = code --wait
+	editor = nvim
 	autocrlf = input
 	pager = delta
 [filter "lfs"]
