@@ -10,6 +10,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
 
 " Interface
+Plug 'mhinz/vim-startify'
+Plug 'psliwka/vim-smoothie'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/completion-nvim'
 Plug 'steelsojka/completion-buffers'
