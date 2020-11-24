@@ -37,6 +37,7 @@ endif
 Plug 'junegunn/fzf.vim'
 Plug 'ptzz/lf.vim'
 Plug 'VebbNix/lf-vim'
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 
 " Background
 Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com/semanser/vim-outdated-plugins/pull/16 is not merged yet
@@ -51,6 +52,7 @@ call plug#end()
 " Setup Appearance
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+set guifont=CaskaydiaCove\ NF:h15
 
 colorscheme codedark
 if (has("termguicolors"))
