@@ -1,33 +1,40 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 " Theme and Appearance
+Plug 'ryanoasis/vim-devicons'
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+
+" Enhancements
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
+Plug 'pgdouyon/vim-evanesco'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+
+" Undo tree
+Plug 'simnalamburt/vim-mundo'
 
 " Navigation
 Plug 'easymotion/vim-easymotion'
-
-" Interface
-Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
+
+" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'VebbNix/lf-vim'
+
+" LSP & Completions
+Plug 'RishabhRD/nvim-lsputils'
+Plug 'RishabhRD/popfix'
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'steelsojka/completion-buffers'
-Plug 'neovim/nvim-lspconfig'
-Plug 'RishabhRD/popfix'
-Plug 'RishabhRD/nvim-lsputils'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'pgdouyon/vim-evanesco'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mhinz/vim-signify'
-Plug 'editorconfig/editorconfig-vim'
 
-" Commands
-Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+" Formatting
 Plug 'sbdchd/neoformat'
 
 " Integrations
@@ -36,18 +43,18 @@ if has('win32')
 else
 	Plug 'usr/bin/fzf'
 endif
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
-Plug 'ptzz/lf.vim'
-Plug 'VebbNix/lf-vim'
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+Plug 'sitiom/lf.vim', { 'branch': 'floaterm' } " lf.vim should be loaded before vim-floaterm to override vim-floaterm's lf wrapper
+Plug 'voldikss/vim-floaterm'
 
 " Background
 Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com/semanser/vim-outdated-plugins/pull/16 is not merged yet
 
 " Dependencies and Misc
-Plug 'tpope/vim-repeat'
-Plug 'rbgrouleff/bclose.vim'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'rbgrouleff/bclose.vim'
 
 call plug#end()
 
@@ -186,11 +193,8 @@ set smartcase ignorecase
 set updatetime=100
 
 let g:lf_replace_netrw = 1
-" Fix lf causing problems on Scoop ps1 shim
-if has('win32')
-	let g:lf_command_override = 'lf.exe'
-endif
 
 " Mappings
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
+let g:floaterm_keymap_toggle = '<F12>'

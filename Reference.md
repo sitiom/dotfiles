@@ -11,9 +11,9 @@
 ### PowerShell
 
 #### Modules
-- oh-my-posh                          
-- posh-git                            
-- PSFzf                               
+- oh-my-posh
+- posh-git
+- PSFzf
 - PSReadLine
 
 #### Scripts
