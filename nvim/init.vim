@@ -1,10 +1,9 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 " Theme and Appearance
-Plug 'ryanoasis/vim-devicons'
-Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasiser/vim-code-dark'
+Plug 'ryanoasis/vim-devicons'
 
 " Enhancements
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -28,11 +27,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'VebbNix/lf-vim'
 
 " LSP & Completions
-Plug 'RishabhRD/nvim-lsputils'
-Plug 'RishabhRD/popfix'
-Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'steelsojka/completion-buffers'
+Plug 'neovim/nvim-lspconfig'
+Plug 'RishabhRD/nvim-lsputils'
+Plug 'RishabhRD/popfix'
 
 " Formatting
 Plug 'sbdchd/neoformat'
@@ -197,4 +196,7 @@ let g:lf_replace_netrw = 1
 " Mappings
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
