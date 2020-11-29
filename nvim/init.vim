@@ -1,3 +1,6 @@
+" vim: fdm=marker
+
+" Plug {{{1
 call plug#begin(stdpath('data') . '/plugged')
 
 " Theme and Appearance
@@ -53,11 +56,10 @@ Plug 'thisisrandy/vim-outdated-plugins' " Use this fork while https://github.com
 
 " Dependencies and Misc
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'rbgrouleff/bclose.vim'
 
 call plug#end()
 
-" Setup Appearance
+" Appearance {{{1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set guifont=CaskaydiaCove\ NF:h15
@@ -67,14 +69,14 @@ if (has("termguicolors"))
  	set termguicolors
 endif
 
-" Set Powershell as shell in Windows
+" Shell {{{1
 if has('win32')
 		set shell=pwsh shellquote= shellpipe=\| shellxquote=
 		set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
 		set shellredir=\|\ Out-File\ -Encoding\ UTF8
 endif
 
-" Completion options
+" Completion {{{1
 autocmd BufEnter * lua require'completion'.on_attach()
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -88,7 +90,7 @@ let g:completion_chain_complete_list = [
 \] 
 let g:completion_auto_change_source = 1
 
-" Setup LSP
+" LSP {{{1
 :lua << EOF
 local lsp = require'lspconfig'
 
@@ -182,7 +184,7 @@ vim.lsp.callbacks['textDocument/documentSymbol'] = require'lsputil.symbols'.docu
 vim.lsp.callbacks['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
 EOF
 
-" Persistent undo
+" Configuration {{{1
 set undofile
 set undodir=~/.vim/undo
 
@@ -193,7 +195,7 @@ set updatetime=100
 
 let g:lf_replace_netrw = 1
 
-" Mappings
+" Mappings {{{1
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
 let g:floaterm_keymap_new    = '<F7>'
