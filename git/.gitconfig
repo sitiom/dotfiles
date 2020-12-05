@@ -3,7 +3,7 @@
 	name = sitiom
 [core]
 	editor = nvim
-	autocrlf = input
+	autocrlf = true
 	pager = delta
 [filter "lfs"]
 	required = true

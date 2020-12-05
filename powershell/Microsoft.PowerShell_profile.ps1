@@ -1,7 +1,6 @@
 # Environment Variables
-$Env:SHELL="pwsh"
-$Env:EDITOR="nvim"
-$Env:PAGER="bat --paging always"
+$Env:EDITOR = "nvim"
+$Env:PAGER = "bat --paging always"
 $Env:LF_ICONS = @(
     'tw=:'
     'st=:'
@@ -178,11 +177,10 @@ Set-PSReadLineOption -EditMode Vi
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "`e[1 q"
-    }
-    else {
+        Write-Host -NoNewline "`e[1 q"
+    } else {
         # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "`e[5 q"
+        Write-Host -NoNewline "`e[5 q"
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $function:OnViModeChange
@@ -191,8 +189,8 @@ Import-Module PSFzf
 
 # Keybindings
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-Set-PSReadlineKeyHandler -Key Ctrl+Spacebar -Function MenuComplete
-Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock { 
+Set-PSReadLineKeyHandler -Key Ctrl+Spacebar -Function MenuComplete
+Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert('lfcd.ps1')
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
@@ -200,11 +198,11 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 
 # Completions
 gh completion -s powershell | Join-String {
-    $_ -replace " ''\)$", " ' ')" -replace "(^\s+\)\s-join\s';')", '$1 -replace ";$wordToComplete$"' -replace "(\[CompletionResult\]::new\('[\w-]+)'", '$1 '''
+    $_ -replace " ''\)$"," ' ')" -replace "(^\s+\)\s-join\s';')",'$1 -replace ";$wordToComplete$"' -replace "(\[CompletionResult\]::new\('[\w-]+)'",'$1 '''
 } -Separator "`n" | Invoke-Expression
 
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
+if (Test-Path ($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
 

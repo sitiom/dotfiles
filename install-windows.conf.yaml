@@ -6,6 +6,8 @@
 - clean: ['~']
 
 - link:
+    ~/AppData/Local/nvim/lua/lsp_config.lua:
+      path: nvim/lua/lsp_config.lua
     ~/AppData/Local/nvim/init.vim:
       path: nvim/init.vim
     ~/AppData/Local/lf/lfrc:
