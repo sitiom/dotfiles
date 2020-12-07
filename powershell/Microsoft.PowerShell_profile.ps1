@@ -1,6 +1,5 @@
 # Environment Variables
 $Env:EDITOR = "nvim"
-$Env:PAGER = "bat --paging always"
 $Env:LF_ICONS = @(
     'tw=:'
     'st=:'
