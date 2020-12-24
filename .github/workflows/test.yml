@@ -1,0 +1,21 @@
+name: dotfiles
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Install dotfiles
+      run: ./install
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Install dotfiles
+      run: .\install-windows.ps1
