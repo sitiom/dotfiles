@@ -12,8 +12,12 @@
       path: nvim/init.vim
     ~/AppData/Local/lf/lfrc:
       path: lf/lfrc-windows
+    ~/Documents/PowerShell/Completions:
+      path: powershell/Completions
     ~/Documents/PowerShell/Scripts/lfcd.ps1:
       path: powershell/Scripts/lfcd.ps1
+    ~/Documents/PowerShell/Microsoft.PowerShell_environment.ps1:
+      path: powershell/Microsoft.PowerShell_environment.ps1
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1:
       path: powershell/Microsoft.PowerShell_profile.ps1
     ~/.gitconfig:
