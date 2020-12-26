@@ -5,8 +5,9 @@
 - lf
 - neofetch
 - neovim
-- zplug
+- zgenom (automatically cloned when not found)
 - zsh
+- vim-packager
 
 ### PowerShell
 
