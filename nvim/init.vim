@@ -21,7 +21,6 @@ function! s:packager_init(packager) abort
   call a:packager.add('mhinz/vim-startify')
   call a:packager.add('pgdouyon/vim-evanesco')
   call a:packager.add('tpope/vim-repeat')
-  call a:packager.add('tpope/vim-sleuth')
   call a:packager.add('tpope/vim-surround')
   call a:packager.add('tpope/vim-unimpaired')
 
@@ -37,11 +36,10 @@ function! s:packager_init(packager) abort
   call a:packager.add('VebbNix/lf-vim')
 
   " LSP & Completions
-  " call a:packager.add('nvim-lua/completion-nvim')
-  " call a:packager.add('steelsojka/completion-buffers')
-  " call a:packager.add('neovim/nvim-lspconfig')
-  " call a:packager.add('RishabhRD/nvim-lsputils')
-  " call a:packager.add('RishabhRD/popfix')
+  call a:packager.add('nvim-lua/completion-nvim')
+  call a:packager.add('steelsojka/completion-buffers')
+  call a:packager.add('neovim/nvim-lspconfig')
+  call a:packager.add('RishabhRD/nvim-lsputils', {'requires': ['RishabhRD/popfix']})
 
   " Formatting
   call a:packager.add('sbdchd/neoformat')
@@ -57,8 +55,9 @@ function! s:packager_init(packager) abort
   call a:packager.add('sitiom/lf.vim', {'branch': 'floaterm', 'type': 'opt'})
   call a:packager.add('voldikss/vim-floaterm', { 'type': 'opt' })
 
-  " Dependencies and Misc
+  " Misc
   call a:packager.add('ThePrimeagen/vim-be-good')
+  call a:packager.add('hugolgst/vimsence')
 endfunction
 
 packadd vim-packager
@@ -85,20 +84,22 @@ if has('win32')
 endif
 
 " Completion & LSP {{{1
-" autocmd BufEnter * lua require'completion'.on_attach()
-" set completeopt=menuone,noinsert,noselect
-" let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-" set shortmess+=c
-"
-" let g:completion_chain_complete_list = [
-"       \{'complete_items': ['lsp', 'snippets']},
-"       \{'complete_items': ['buffer']},
-"       \{'mode': '<c-p>'},
-"       \{'mode': '<c-n>'}
-"       \]
-" let g:completion_auto_change_source = 1
-"
-" lua require("lsp_config")
+if !exists('g:vscode')
+  autocmd BufEnter * lua require'completion'.on_attach()
+  set completeopt=menuone,noinsert,noselect
+  let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+  set shortmess+=c
+
+  let g:completion_chain_complete_list = [
+    \{'complete_items': ['lsp', 'snippets']},
+    \{'complete_items': ['buffer']},
+    \{'mode': '<c-p>'},
+    \{'mode': '<c-n>'}
+    \]
+  let g:completion_auto_change_source = 1
+
+  lua require("lsp_config")
+endif
 
 " Configuration {{{1
 set undofile
