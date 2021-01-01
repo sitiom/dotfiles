@@ -20,6 +20,7 @@ function! s:packager_init(packager) abort
   call a:packager.add('sitiom/vim-signify', {'branch': 'patch-1'})
   call a:packager.add('mhinz/vim-startify')
   call a:packager.add('pgdouyon/vim-evanesco')
+  call a:packager.add('tyru/caw.vim')
   call a:packager.add('tpope/vim-repeat')
   call a:packager.add('tpope/vim-surround')
   call a:packager.add('tpope/vim-unimpaired')
