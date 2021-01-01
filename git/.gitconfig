@@ -1,6 +1,7 @@
 [user]
-	email = 56180050+sitiom@users.noreply.github.com
-	name = sitiom
+	email = sitiom@disroot.org
+	name = Ryan Caezar Itang
+	signingkey = 24E94C6852AA6A8336D0CCF95FB99AF680456C16
 [core]
 	editor = nvim
 	autocrlf = false
@@ -22,3 +23,5 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+[commit]
+	gpgsign = true
