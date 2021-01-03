@@ -58,7 +58,7 @@ function! s:packager_init(packager) abort
 
   " Misc
   call a:packager.add('ThePrimeagen/vim-be-good')
-  call a:packager.add('hugolgst/vimsence')
+  call a:packager.add('hugolgst/vimsence', { 'type': 'opt' })
 endfunction
 
 packadd vim-packager
