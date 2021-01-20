@@ -7,7 +7,7 @@ Get-ChildItem $PSScriptRoot\Completions | % {  & $_.FullName }
 Import-Module posh-git
 Import-Module oh-my-posh
 
-Set-PoshPrompt -Theme agnoster
+Set-PoshPrompt -Theme slim
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
