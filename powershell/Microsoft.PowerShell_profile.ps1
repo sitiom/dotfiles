@@ -1,7 +1,10 @@
 # Environment Variables
 & $PSScriptRoot\Microsoft.PowerShell_environment.ps1
 # Completions
-Get-ChildItem $PSScriptRoot\Completions | % {  & $_.FullName }
+Get-ChildItem $PSScriptRoot\Completions | % { & $_.FullName }
+# Aliases
+Function passgen { echo "$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)" }
+Function passphrasegen { echo "$(password-generator -l 6)-$(password-generator -l 6)-$(password-generator -l 6)" }
 
 # Modules
 Import-Module posh-git
@@ -17,7 +20,8 @@ function OnViModeChange {
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
         Write-Host -NoNewline "`e[1 q"
-    } else {
+    }
+    else {
         # Set the cursor to a blinking line.
         Write-Host -NoNewline "`e[5 q"
     }
@@ -37,3 +41,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 
 # Clear-Host
 # posh-winfetch.ps1
+
