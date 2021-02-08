@@ -24,6 +24,8 @@ function! s:packager_init(packager) abort
   call a:packager.add('tpope/vim-repeat')
   call a:packager.add('tpope/vim-surround')
   call a:packager.add('tpope/vim-unimpaired')
+  call a:packager.add('Yggdroot/indentLine')
+  call a:packager.add('lukas-reineke/indent-blankline.nvim', {'branch': 'lua'})
 
   " Undo tree
   call a:packager.add('simnalamburt/vim-mundo')
@@ -53,7 +55,7 @@ function! s:packager_init(packager) abort
   endif
   call a:packager.add('editorconfig/editorconfig-vim')
   call a:packager.add('junegunn/fzf.vim')
-  call a:packager.add('sitiom/lf.vim', {'branch': 'floaterm', 'type': 'opt'})
+  call a:packager.add('ptzz/lf.vim', {'type': 'opt'})
   call a:packager.add('voldikss/vim-floaterm', { 'type': 'opt' })
 
   " Misc
