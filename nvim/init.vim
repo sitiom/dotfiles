@@ -1,5 +1,4 @@
 " vim: fdm=marker fml=3
-
 " Plug {{{1
 if &compatible
   set nocompatible
@@ -55,8 +54,8 @@ function! s:packager_init(packager) abort
   endif
   call a:packager.add('editorconfig/editorconfig-vim')
   call a:packager.add('junegunn/fzf.vim')
-  call a:packager.add('ptzz/lf.vim', {'type': 'opt'})
-  call a:packager.add('voldikss/vim-floaterm', { 'type': 'opt' })
+  call a:packager.add('ptzz/lf.vim')
+  call a:packager.add('voldikss/vim-floaterm', {'type': 'opt'})
 
   " Misc
   call a:packager.add('ThePrimeagen/vim-be-good')
@@ -64,9 +63,7 @@ function! s:packager_init(packager) abort
 endfunction
 
 packadd vim-packager
-" Manually load packages when load order is important
 packadd vim-floaterm
-packadd lf.vim
 call packager#setup(function('s:packager_init'))
 
 " Appearance {{{1
