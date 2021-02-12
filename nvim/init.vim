@@ -63,7 +63,6 @@ function! s:packager_init(packager) abort
 endfunction
 
 packadd vim-packager
-packadd vim-floaterm
 call packager#setup(function('s:packager_init'))
 
 " Appearance {{{1
@@ -82,7 +81,8 @@ if has('win32')
   set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
   set shellredir=\|\ Out-File\ -Encoding\ UTF8
 endif
-
+" Add vim-floaterm after shell is set
+packadd vim-floaterm
 " Completion & LSP {{{1
 if !exists('g:vscode')
   autocmd BufEnter * lua require'completion'.on_attach()
