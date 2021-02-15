@@ -111,6 +111,8 @@ set smartcase ignorecase
 set updatetime=100
 
 let g:lf_replace_netrw = 1
+let g:lf_width = 0.9
+let g:lf_height = 0.9
 
 let g:neoformat_verbose = 1 " only affects the verbosity of Neoformat
 let g:neoformat_basic_format_retab = 1
