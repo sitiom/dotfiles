@@ -23,7 +23,6 @@ function! s:packager_init(packager) abort
   call a:packager.add('tpope/vim-repeat')
   call a:packager.add('tpope/vim-surround')
   call a:packager.add('tpope/vim-unimpaired')
-  call a:packager.add('Yggdroot/indentLine')
   call a:packager.add('lukas-reineke/indent-blankline.nvim', {'branch': 'lua'})
 
   " Undo tree
