@@ -16,7 +16,7 @@ function! s:packager_init(packager) abort
   " Enhancements
   call a:packager.add('jeffkreeftmeijer/vim-numbertoggle')
   call a:packager.add('jiangmiao/auto-pairs')
-  call a:packager.add('sitiom/vim-signify', {'branch': 'patch-1'})
+  call a:packager.add('mhinz/vim-signify')
   call a:packager.add('mhinz/vim-startify')
   call a:packager.add('pgdouyon/vim-evanesco')
   call a:packager.add('tyru/caw.vim')
