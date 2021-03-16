@@ -40,7 +40,7 @@ if ! zgenom saved; then
         zgenom ohmyzsh plugins/archlinux
     fi
 
-    # (( $+commands[fzf] )) && zgenom ohmyzsh plugins/fzf
+    (( $+commands[fzf] )) && zgenom ohmyzsh plugins/fzf
 
     zgenom save
 fi
@@ -58,7 +58,5 @@ export MODE_CURSOR_VLINE="block"
 
 # Key-bindings
 (( $+commands[lf] )) && bindkey -s '^o' 'lfcd\n'
-# Enable fzf key-bindings and completion after the plugins are loaded
-(( $+commands[fzf] )) && source $HOME/.zsh/plugins/fzf/fzf.plugin.zsh
 
 # neofetch

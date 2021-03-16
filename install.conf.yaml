@@ -12,8 +12,6 @@
       path: nvim/init.vim
     ~/.config/lf/lfrc:
       path: lf/lfrc
-    ~/.zsh/plugins/fzf/fzf.plugin.zsh:
-      path: zsh/.zsh/plugins/fzf/fzf.plugin.zsh
     ~/.zshrc:
       path: zsh/.zshrc
     ~/.zshenv:
