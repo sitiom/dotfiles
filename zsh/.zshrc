@@ -36,7 +36,7 @@ if ! zgenom saved; then
 
     # Distro specific config
     dist=$(awk -F'=' '/^ID=/ {print tolower($2)}' /etc/*-release)
-    if [[ $dist == "arch" ]]; then
+    if [[ $dist == "arch" || $dist == "manjaro" ]]; then
         zgenom ohmyzsh plugins/archlinux
     fi
 
