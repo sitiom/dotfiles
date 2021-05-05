@@ -1,11 +1,8 @@
-#!/bin/zsh -f
-
 # Install zgenom if not installed
 if [ ! -d ~/.zgenom ]; then
     echo "\e[33mInstalling zgenom...\033[0m"
     git clone https://github.com/jandamm/zgenom ~/.zgenom
 fi
-
 source ~/.zgenom/zgenom.zsh
 
 if ! zgenom saved; then
@@ -29,7 +26,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load MichaelAquilina/zsh-you-should-use
     (( $+commands[lf] )) && zgenom load gokcehan/lf etc/lfcd.sh
-    zgenom load softmoth/zsh-vim-mode
+    zgenom load jeffreytse/zsh-vi-mode
 
     # Powerlevel10k Theme. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
     zgenom load romkatv/powerlevel10k powerlevel10k
@@ -49,6 +46,9 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Key-bindings
-(( $+commands[lf] )) && bindkey -s '^o' 'lfcd\n'
+function zvm_after_init() {
+  [ -f $ZGEN_DIR/ohmyzsh/ohmyzsh/___/plugins/fzf/fzf.plugin.zsh ] && source $ZGEN_DIR/ohmyzsh/ohmyzsh/___/plugins/fzf/fzf.plugin.zsh
+  bindkey -s '^o' 'lfcd\n'
+}
 
 # neofetch

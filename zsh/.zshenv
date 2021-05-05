@@ -165,14 +165,6 @@ ex=:\
 *.nix=:\
 "
 
-# Visual Vim Cursor
-export MODE_CURSOR_VIINS="blinking bar"
-export MODE_CURSOR_REPLACE="underline"
-export MODE_CURSOR_VICMD="block"
-export MODE_CURSOR_SEARCH="underline"
-export MODE_CURSOR_VISUAL="block"
-export MODE_CURSOR_VLINE="block"
-
 # WSL-specific variables
 if grep -iq microsoft /proc/version; then
     export GPG_TTY=$(tty)
