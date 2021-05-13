@@ -5,12 +5,10 @@ Get-ChildItem $PSScriptRoot\Completions | % { & $_.FullName }
 # Aliases
 Function passgen { echo "$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)" }
 Function passphrasegen { echo "$(password-generator -l 6)-$(password-generator -l 6)-$(password-generator -l 6)" }
+Set-Alias winfetch pwshfetch-test-1
 
-# Modules
-Import-Module posh-git
-Import-Module oh-my-posh
-
-Set-PoshPrompt -Theme slim
+# Initialize oh-my-posh from chocolatey
+Invoke-Expression (oh-my-posh --init --shell (oh-my-posh -print-shell) --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\slim.omp.json")
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
