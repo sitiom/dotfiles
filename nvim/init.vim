@@ -116,6 +116,8 @@ let g:lf_height = 0.9
 let g:neoformat_verbose = 1 " only affects the verbosity of Neoformat
 let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
+
+au TextYankPost * silent! lua vim.highlight.on_yank()
 " Mappings {{{1
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
