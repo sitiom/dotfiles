@@ -7,6 +7,12 @@ Function passgen { echo "$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-
 Function passphrasegen { echo "$(password-generator -l 6)-$(password-generator -l 6)-$(password-generator -l 6)" }
 Set-Alias winfetch pwshfetch-test-1
 
+# Initialize zoxide
+Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell) -join "`n"
+})
+
 # Initialize oh-my-posh from chocolatey
 Invoke-Expression (oh-my-posh --init --shell (oh-my-posh -print-shell) --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\slim.omp.json")
 

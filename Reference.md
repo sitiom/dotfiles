@@ -8,6 +8,7 @@
 - zgenom (automatically cloned when not found)
 - zsh
 - vim-packager
+- zoxide
 
 ### PowerShell
 

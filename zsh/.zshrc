@@ -51,4 +51,7 @@ function zvm_after_init() {
   bindkey -s '^o' 'lfcd\n'
 }
 
+# Init zoxide
+eval "$(zoxide init zsh)"
+
 # neofetch
