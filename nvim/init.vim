@@ -67,7 +67,7 @@ call packager#setup(function('s:packager_init'))
 " Appearance {{{1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-set guifont=CaskaydiaCove\ NF:h15
+set guifont=Delugia\ Nerd\ Font:h15
 
 colorscheme codedark
 if (has("termguicolors"))
