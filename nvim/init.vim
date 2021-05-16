@@ -6,7 +6,7 @@ endif
 
 function! s:packager_init(packager) abort
   " Self manage
-  call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
+  call a:packager.add('kristijanhusak/vim-packager', { 'type': 'opt' })
 
   " Theme and Appearance
   call a:packager.add('vim-airline/vim-airline')
