@@ -54,6 +54,7 @@ function! s:packager_init(packager) abort
   call a:packager.add('editorconfig/editorconfig-vim')
   call a:packager.add('junegunn/fzf.vim')
   call a:packager.add('ptzz/lf.vim')
+  call a:packager.add('nanotee/zoxide.vim')
   call a:packager.add('voldikss/vim-floaterm', {'type': 'opt'})
 
   " Misc
