@@ -29,7 +29,6 @@ function! s:packager_init(packager) abort
   call a:packager.add('simnalamburt/vim-mundo')
 
   " Navigation
-  call a:packager.add('easymotion/vim-easymotion')
   call a:packager.add('psliwka/vim-smoothie')
 
   " Syntax highlighting
@@ -103,12 +102,12 @@ endif
 
 " Configuration {{{1
 set undofile
-set undodir=~/.vim/undo
 
 set notimeout
 set number relativenumber
 set smartcase ignorecase
 set updatetime=100
+set mouse=a
 
 let g:lf_replace_netrw = 1
 let g:lf_width = 0.9
@@ -119,6 +118,7 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
+
 " Mappings {{{1
 nnoremap <F5> :MundoToggle<CR>
 set pastetoggle=<F2>
