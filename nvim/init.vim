@@ -59,13 +59,9 @@ function! s:packager_init(packager) abort
 
   " Misc
   call a:packager.add('ThePrimeagen/vim-be-good')
-  call a:packager.add('andweeb/presence.nvim', { 'type': 'opt' })
 endfunction
 
 packadd vim-packager
-if !exists('g:vscode')
-  packadd presence.nvim
-endif
 call packager#setup(function('s:packager_init'))
 
 " Appearance {{{1
