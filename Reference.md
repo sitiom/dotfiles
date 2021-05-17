@@ -5,17 +5,18 @@
 - lf
 - neofetch
 - neovim
-- zgenom (automatically cloned when not found)
-- zsh
+- oh-my-posh
 - vim-packager
 - zoxide
 - firenvim
 
+### Linux
+- zgenom (automatically cloned when not found)
+- zsh
+
 ### PowerShell
 
 #### Modules
-- oh-my-posh
-- posh-git
 - PSFzf
 - PSReadLine
 
