@@ -9,6 +9,7 @@
 - zsh
 - vim-packager
 - zoxide
+- firenvim
 
 ### PowerShell
 

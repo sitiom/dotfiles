@@ -55,6 +55,7 @@ function! s:packager_init(packager) abort
   call a:packager.add('ptzz/lf.vim')
   call a:packager.add('nanotee/zoxide.vim')
   call a:packager.add('voldikss/vim-floaterm', {'type': 'opt'})
+  call a:packager.add('glacambre/firenvim', { 'do':{ _ -> firenvim#install(0) }})
 
   " Misc
   call a:packager.add('ThePrimeagen/vim-be-good')
@@ -67,7 +68,7 @@ call packager#setup(function('s:packager_init'))
 " Appearance {{{1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-set guifont=Delugia\ Nerd\ Font:h15
+let &guifont = "Delugia Nerd Font:" . (!exists('g:started_by_firenvim') ? "h15" : "h10")
 
 colorscheme codedark
 if (has("termguicolors"))
@@ -116,6 +117,14 @@ let g:lf_height = 0.9
 let g:neoformat_verbose = 1 " only affects the verbosity of Neoformat
 let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
+
+let g:firenvim_config = { 
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
