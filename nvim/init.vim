@@ -30,6 +30,7 @@ function! s:packager_init(packager) abort
 
   " Navigation
   call a:packager.add('psliwka/vim-smoothie')
+  call a:packager.add('dstein64/nvim-scrollview')
 
   " Syntax highlighting
   call a:packager.add('sheerun/vim-polyglot')
