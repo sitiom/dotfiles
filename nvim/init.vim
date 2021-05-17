@@ -24,6 +24,7 @@ function! s:packager_init(packager) abort
   call a:packager.add('tpope/vim-surround')
   call a:packager.add('tpope/vim-unimpaired')
   call a:packager.add('lukas-reineke/indent-blankline.nvim', {'branch': 'lua'})
+  call a:packager.add('simeji/winresizer')
 
   " Undo tree
   call a:packager.add('simnalamburt/vim-mundo')
