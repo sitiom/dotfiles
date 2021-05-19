@@ -19,6 +19,6 @@
 #### Modules
 - PSFzf
 - PSReadLine
-
+- Terminal-Icons
 #### Scripts
 - posh-winfetch

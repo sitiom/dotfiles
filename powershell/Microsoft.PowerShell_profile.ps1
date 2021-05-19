@@ -33,6 +33,7 @@ function OnViModeChange {
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $function:OnViModeChange
 
 Import-Module PSFzf
+Import-Module Terminal-Icons
 
 # Keybindings
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
