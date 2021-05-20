@@ -6,10 +6,10 @@
 - clean: ['~']
 
 - link:
-    ~/AppData/Local/nvim/lua/lsp_config.lua:
-      path: nvim/lua/lsp_config.lua
-    ~/AppData/Local/nvim/init.vim:
-      path: nvim/init.vim
+    ~/AppData/Local/nvim/lua:
+      path: nvim/lua
+    ~/AppData/Local/nvim/init.lua:
+      path: nvim/init.lua
     ~/AppData/Local/lf/lfrc:
       path: lf/lfrc-windows
     ~/Documents/PowerShell/Completions:

@@ -6,10 +6,8 @@
 - clean: ['~']
 
 - link:
-    ~/.config/nvim/lua/lsp_config.lua:
-      path: nvim/lua/lsp_config.lua
-    ~/.config/nvim/init.vim:
-      path: nvim/init.vim
+    ~/.config/nvim/init.lua:
+      path: nvim/init.lua
     ~/.config/lf/lfrc:
       path: lf/lfrc
     ~/.zshrc:
