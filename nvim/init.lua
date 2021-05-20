@@ -17,10 +17,17 @@ require('packer').startup(function()
   use { 'svermeulen/vimpeccable', opt = true }
 
   -- Theme and Appearance
-  use 'glepnir/galaxyline.nvim'
-  use 'akinsho/nvim-bufferline.lua'
+  use {
+  'glepnir/galaxyline.nvim',
+    config = function() require 'statusline' end,
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+  use {
+  'akinsho/nvim-bufferline.lua',
+    config = function() require("bufferline").setup() end,
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
   use 'tomasiser/vim-code-dark'
-  use 'kyazdani42/nvim-web-devicons'
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
@@ -35,7 +42,7 @@ require('packer').startup(function()
   use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
   use 'simeji/winresizer'
   use 'onsails/lspkind-nvim'
-  use { 'famiu/nvim-reload', requires = {'nvim-lua/plenary.nvim'}}
+  use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim'}
 
   -- Undo tree
   use 'simnalamburt/vim-mundo'
@@ -86,8 +93,6 @@ vim.o.termguicolors = true
 vim.o.guifont = 'Delugia Nerd Font:' .. (vim.fn.exists('g:started_by_firenvim') ~= 1 and "h15" or "h10")
 
 vim.cmd 'colorscheme codedark'
-require("statusline")
-require("bufferline").setup()
 
 if vim.fn.has('win32') == 1 then
   vim.o.shell = 'pwsh'
@@ -101,10 +106,11 @@ end
 vim.cmd "packadd vim-floaterm"
 
 -- Configuration
+vim.bo.undofile = true
 vim.o.undofile = true
 
-vim.o.number = true
-vim.o.relativenumber = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.updatetime = 100
