@@ -18,8 +18,13 @@ require('packer').startup(function()
 
   -- Theme and Appearance
   use {
-  'glepnir/galaxyline.nvim',
-    config = function() require 'statusline' end,
+    'famiu/feline.nvim',
+    config = function()
+      require('feline').setup{
+        default_fg = '#D4D4D4',
+        default_bg = '#161616'
+      }
+    end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use {
@@ -31,18 +36,22 @@ require('packer').startup(function()
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
-  use 'jiangmiao/auto-pairs'
-  use 'mhinz/vim-signify'
+  use 'LunarWatcher/auto-pairs'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function() require('gitsigns').setup() end,
+    requires = 'nvim-lua/plenary.nvim'
+  }
   use 'mhinz/vim-startify'
   use 'pgdouyon/vim-evanesco'
-  use 'tyru/caw.vim'
+  use 'b3nj5m1n/kommentary'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
   use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
   use 'simeji/winresizer'
-  use 'onsails/lspkind-nvim'
-  use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim'}
+  use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim' }
+  use 'roxma/vim-paste-easy'
 
   -- Undo tree
   use 'simnalamburt/vim-mundo'
@@ -52,25 +61,20 @@ require('packer').startup(function()
   use 'dstein64/nvim-scrollview'
 
   -- Syntax highlighting
-  use 'sheerun/vim-polyglot'
+  use 'sheerun/vim-polyglot' -- TODO: Replace with treesitter
   use 'VebbNix/lf-vim'
 
   -- Formatting
   use 'sbdchd/neoformat'
 
+  -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+  }
+
   -- Integrations
-  if vim.fn.has('win32') == 1 then
-    use {
-      'junegunn/fzf',
-      run = function()
-        vim.fn['fzf#install']()
-      end
-    }
-  else
-    use '/usr/bin/fzf'
-  end
   use 'editorconfig/editorconfig-vim'
-  use 'junegunn/fzf.vim'
   use 'ptzz/lf.vim'
   use 'nanotee/zoxide.vim'
   use { 'voldikss/vim-floaterm', opt = true }
@@ -116,6 +120,7 @@ vim.o.ignorecase = true
 vim.o.updatetime = 100
 vim.o.mouse = 'a'
 
+vim.g.lf_map_keys = 0
 vim.g.lf_replace_netrw = 1
 vim.g.lf_width = 0.9
 vim.g.lf_height = 0.9
@@ -132,12 +137,16 @@ vim.g.firenvim_config = {
   }
 }
 
--- https://github.com/nanotee/nvim-lua-guide#defining-autocommands
 vim.cmd "au TextYankPost * silent! lua vim.highlight.on_yank()"
 
 -- Mappings
 vimp.nnoremap('<F5>', ':MundoToggle<CR>')
-vim.o.pastetoggle = '<F2>'
+vimp.nnoremap('<C-p>', ':Lf<CR>')
+vimp.nnoremap('<leader>ff', function() require('telescope.builtin').find_files() end)
+vimp.nnoremap('<leader>fg', function() require('telescope.builtin').live_grep() end)
+vimp.nnoremap('<leader>fb', function() require('telescope.builtin').buffers() end)
+vimp.nnoremap('<leader>fh', function() require('telescope.builtin').help_tags() end)
+
 vim.g.floaterm_keymap_new = '<F7>'
 vim.g.floaterm_keymap_prev = '<F8>'
 vim.g.floaterm_keymap_next = '<F9>'
