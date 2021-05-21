@@ -64,7 +64,28 @@ require('packer').startup(function()
   use 'dstein64/nvim-scrollview'
 
   -- Syntax highlighting
-  use 'sheerun/vim-polyglot' -- TODO: Replace with treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        highlight = { enable = true },
+	incremental_selection = {
+	  enable = true,
+	  keymaps = {
+	    init_selection = "gnn",
+	    node_incremental = "grn",
+	    scope_incremental = "grc",
+	    node_decremental = "grm"
+	  }
+	},
+	context_commentstring = {
+          enable = true
+        }
+      }
+    end,
+    requires = 'JoosepAlviste/nvim-ts-context-commentstring'
+  }
   use 'VebbNix/lf-vim'
 
   -- Formatting
