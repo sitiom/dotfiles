@@ -1,6 +1,8 @@
 # Environment Variables
-$Env:EDITOR = "nvim"
-$Env:LF_ICONS = @(
+$env:EDITOR = "nvim"
+$env:PAGER = "bat --paging always"
+
+$env:LF_ICONS = @(
     'tw=:'
     'st=:'
     'ow=:'
@@ -162,3 +164,4 @@ $Env:LF_ICONS = @(
     '*.pdf=:'
     '*.nix=:'
 ) | Join-String
+

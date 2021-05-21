@@ -80,9 +80,9 @@ require('packer').startup(function()
 	  }
 	},
 	context_commentstring = {
-          enable = true
-        }
+        enable = true
       }
+    }
     end,
     requires = 'JoosepAlviste/nvim-ts-context-commentstring'
   }
