@@ -8,3 +8,7 @@ vim.o.ignorecase = true
 vim.o.updatetime = 100
 vim.o.mouse = 'a'
 
+-- Indentation
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
