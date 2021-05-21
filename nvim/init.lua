@@ -106,8 +106,6 @@ if vim.fn.has('win32') == 1 then
   vim.o.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
   vim.o.shellredir = '| Out-File -Encoding UTF8'
 end
--- Add vim-floaterm after shell is set
-vim.cmd "packadd vim-floaterm"
 
 -- Configuration
 vim.bo.undofile = true
@@ -151,3 +149,6 @@ vim.g.floaterm_keymap_new = '<F7>'
 vim.g.floaterm_keymap_prev = '<F8>'
 vim.g.floaterm_keymap_next = '<F9>'
 vim.g.floaterm_keymap_toggle = '<F12>'
+
+-- Sequencing not working yet for some reason
+vim.cmd "packadd vim-floaterm"
