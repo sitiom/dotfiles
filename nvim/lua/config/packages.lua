@@ -42,7 +42,24 @@ require('packer').startup(function()
     config = function() require('gitsigns').setup() end,
     requires = 'nvim-lua/plenary.nvim'
   }
-  use 'mhinz/vim-startify'
+  use {
+    'mhinz/vim-startify',
+    config = function()
+      vim.g.startify_session_persistence = 1
+      vim.g.startify_fortune_use_unicode = 1
+      -- Use nvim-web-devicons instead
+      function _G.webDevIcons(path)
+        local filename = vim.fn.fnamemodify(path, ':t')
+        local extension = vim.fn.fnamemodify(path, ':e')
+        return require'nvim-web-devicons'.get_icon(filename, extension, { default = true })
+      end
+      vim.cmd [[
+      function! StartifyEntryFormat() abort
+        return 'v:lua.webDevIcons(absolute_path) . " " . entry_path'
+      endfunction
+      ]]
+    end
+  }
   use 'pgdouyon/vim-evanesco'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-repeat'
@@ -51,6 +68,7 @@ require('packer').startup(function()
   use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
   use 'simeji/winresizer'
   use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim' }
+  use 'yamatsum/nvim-cursorline'
   use 'roxma/vim-paste-easy'
 
   -- Undo tree
@@ -69,19 +87,20 @@ require('packer').startup(function()
     config = function()
       require'nvim-treesitter.configs'.setup {
         highlight = { enable = true },
-	incremental_selection = {
-	  enable = true,
-	  keymaps = {
-	    init_selection = "gnn",
-	    node_incremental = "grn",
-	    scope_incremental = "grc",
-	    node_decremental = "grm"
-	  }
-	},
-	context_commentstring = {
-        enable = true
+	  incremental_selection = {
+	    enable = true,
+	    keymaps = {
+	      init_selection = "gnn",
+	      node_incremental = "grn",
+	      scope_incremental = "grc",
+	      node_decremental = "grm"
+	    }
+	  },
+      indent = { enable = true },
+	  context_commentstring = {
+          enable = true
+        }
       }
-    }
     end,
     requires = 'JoosepAlviste/nvim-ts-context-commentstring'
   }
