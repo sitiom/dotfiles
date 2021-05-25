@@ -170,7 +170,7 @@ require('packer').startup(function()
       -- Setup servers
       local pid = vim.fn.getpid()
 
-      local omnisharp_bin = "C:\\ProgramData\\chocolatey\\lib\\omnisharp\\tools\\OmniSharp.exe"
+      local omnisharp_bin = vim.fn.exepath('omnisharp')
       nvim_lsp.omnisharp.setup{
           cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
           on_attach = on_attach
@@ -273,7 +273,10 @@ require('packer').startup(function()
     end,
     opt = true
   }
-  use 'vimsence/vimsence'
+  use {
+    'vimsence/vimsence',
+    cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end
+  }
   use {
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end,
