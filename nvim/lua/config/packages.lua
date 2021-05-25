@@ -258,7 +258,18 @@ require('packer').startup(function()
       vimp.nnoremap('<C-p>', ':Lf<CR>')
     end
   }
-  use 'nanotee/zoxide.vim'
+  use {
+    'nanotee/zoxide.vim',
+    requires = {
+      {
+        'junegunn/fzf.vim',
+        requires = {
+          'junegunn/fzf',
+          run = function() vim.fn['fzf#install']() end 
+        }
+      }
+    }
+  }
   use {
     'voldikss/vim-floaterm',
     setup = function()
