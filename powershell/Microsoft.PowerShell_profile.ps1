@@ -5,7 +5,6 @@ Get-ChildItem $PSScriptRoot\Completions | % { & $_.FullName }
 # Aliases
 Function passgen { echo "$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)-$(password-generator -p "[a-zA-Z0-9]" -l 6)" }
 Function passphrasegen { echo "$(password-generator -l 6)-$(password-generator -l 6)-$(password-generator -l 6)" }
-Set-Alias winfetch pwshfetch-test-1
 
 # Initialize zoxide
 Invoke-Expression (& {
