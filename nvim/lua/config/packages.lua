@@ -32,7 +32,7 @@ require('packer').startup(function()
     config = function() require("bufferline").setup() end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
-  use 'tomasiser/vim-code-dark'
+  use 'Mofiqul/vscode.nvim'
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
