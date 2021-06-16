@@ -285,7 +285,7 @@ require('packer').startup(function()
     opt = true
   }
   use {
-    'vimsence/vimsence',
+    'andweeb/presence.nvim',
     cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end
   }
   use {
