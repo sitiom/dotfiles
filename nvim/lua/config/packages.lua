@@ -286,6 +286,7 @@ require('packer').startup(function()
   }
   use {
     'andweeb/presence.nvim',
+    setup = function() vim.g.presence_main_image = "file" end,
     cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end
   }
   use {
