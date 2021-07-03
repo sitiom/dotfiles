@@ -65,7 +65,7 @@ require('packer').startup(function()
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
-  use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+  use { 'lukas-reineke/indent-blankline.nvim' }
   use 'simeji/winresizer'
   use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim' }
   use 'yamatsum/nvim-cursorline'
