@@ -13,7 +13,7 @@ Invoke-Expression (& {
 })
 
 # Initialize oh-my-posh from chocolatey
-Invoke-Expression (oh-my-posh --init --shell (oh-my-posh -print-shell) --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\slim.omp.json")
+Invoke-Expression (oh-my-posh --init --shell pwsh --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\slim.omp.json")
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
