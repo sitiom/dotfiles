@@ -44,5 +44,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 }
 
 # Clear-Host
-# posh-winfetch.ps1
-
+# winfetch.ps1
