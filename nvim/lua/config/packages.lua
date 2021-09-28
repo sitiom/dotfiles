@@ -21,8 +21,10 @@ require('packer').startup(function()
     'famiu/feline.nvim',
     config = function()
       require('feline').setup{
-        default_fg = '#D4D4D4',
-        default_bg = '#161616'
+          colors = {
+            fg = '#D4D4D4',
+            bg = '#161616'
+          }
       }
     end,
     requires = 'kyazdani42/nvim-web-devicons'
