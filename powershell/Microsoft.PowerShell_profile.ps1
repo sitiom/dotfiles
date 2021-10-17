@@ -12,8 +12,9 @@ Invoke-Expression (& {
     (zoxide init --hook $hook powershell) -join "`n"
 })
 
+Import-Module posh-git
 # Initialize oh-my-posh from chocolatey
-Invoke-Expression (oh-my-posh --init --shell pwsh --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\slim.omp.json")
+Invoke-Expression (oh-my-posh --init --shell pwsh --config "$(( Get-Item (Get-Command oh-my-posh).Path).Directory.Parent.FullName )\themes\iterm2.omp.json")
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
@@ -43,5 +44,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
+Enable-PoshTransientPrompt
 # Clear-Host
 # winfetch.ps1
+
