@@ -110,39 +110,45 @@ require('packer').startup(function()
 
   -- Completion
   use {
-    'hrsh7th/nvim-compe',
+    'hrsh7th/nvim-cmp',
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'onsails/lspkind-nvim' },
     config = function()
-      require'compe'.setup {
-        enabled = true,
-        autocomplete = true,
-        debug = false,
-        min_length = 1,
-        preselect = 'enable',
-        throttle_time = 80,
-        source_timeout = 200,
-        incomplete_delay = 400,
-        max_abbr_width = 100,
-        max_kind_width = 100,
-        max_menu_width = 100,
-        documentation = true,
+      local cmp = require 'cmp'
+      local lspkind = require'lspkind'
 
-        source = {
-          path = true,
-          buffer = true,
-          calc = true,
-          nvim_lsp = true,
-          nvim_lua = true,
-          vsnip = true,
-          treesitter = true,
-          ultisnips = true
-        }
+      cmp.setup {
+        formatting = {
+          format = lspkind.cmp_format{
+            with_text = true,
+            menu = {
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              luasnip = "[LuaSnip]",
+              nvim_lua = "[Lua]",
+              latex_symbols = "[Latex]",
+            }
+          }
+        },
+        mapping = {
+          ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+          ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+          ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.close(),
+          ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          })
+        },
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+        }, {
+          { name = 'buffer' },
+        })
     }
-
-    -- Mappings
-    vimp.inoremap({'silent', 'expr'}, '<C-Space>', "compe#complete()")
-    vimp.inoremap({'silent', 'expr'}, '<CR>', "compe#confirm('<CR>')")
-    vimp.inoremap({'silent', 'expr'}, '<C-f>', "compe#scroll({ 'delta': +4 })")
-    vimp.inoremap({'silent', 'expr'}, '<C-d>', "compe#scroll({ 'delta': -4 })")
     end
   }
 
@@ -151,6 +157,7 @@ require('packer').startup(function()
     'neovim/nvim-lspconfig',
     config = function()
       local nvim_lsp = require'lspconfig'
+      local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       -- Use an on_attach function to only map the following keys 
       -- after the language server attaches to the current buffer
@@ -175,7 +182,8 @@ require('packer').startup(function()
       local omnisharp_bin = vim.fn.exepath('omnisharp')
       nvim_lsp.omnisharp.setup{
           cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
-          on_attach = on_attach
+          on_attach = on_attach,
+          capabilities = capabilities
       }
     end
   }
@@ -200,10 +208,6 @@ require('packer').startup(function()
     end
   }
   use 'folke/lsp-colors.nvim'
-  use {
-    'onsails/lspkind-nvim',
-    config = function() require('lspkind').init() end
-  }
   use {
     'simrat39/symbols-outline.nvim',
     config = function()
