@@ -38,7 +38,10 @@ require('packer').startup(function()
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
-  use 'LunarWatcher/auto-pairs'
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require'nvim-autopairs'.setup{} end
+  }
   use {
     'lewis6991/gitsigns.nvim',
     config = function() require('gitsigns').setup() end,
@@ -111,11 +114,11 @@ require('packer').startup(function()
   -- Completion
   use {
     'hrsh7th/nvim-cmp',
+    after = 'nvim-autopairs',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'onsails/lspkind-nvim' },
     config = function()
       local cmp = require 'cmp'
       local lspkind = require'lspkind'
-
       cmp.setup {
         formatting = {
           format = lspkind.cmp_format{
@@ -148,6 +151,17 @@ require('packer').startup(function()
         }, {
           { name = 'buffer' },
         })
+    }
+
+    require'nvim-autopairs.completion.cmp'.setup{
+      map_cr = true,
+      map_complete = false,
+      auto_select = true,
+      insert = false,
+      map_char = {
+        all = '(',
+        tex = '{'
+      }
     }
     end
   }
