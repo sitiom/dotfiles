@@ -171,12 +171,12 @@ require('packer').startup(function()
   }
 
   -- LSP
+  use 'neovim/nvim-lspconfig'
   use {
-    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
     config = function()
-      local nvim_lsp = require'lspconfig'
+      local lsp_installer = require'nvim-lsp-installer'
       local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
       -- Use an on_attach function to only map the following keys 
       -- after the language server attaches to the current buffer
       local on_attach = function(client, bufnr)
@@ -191,21 +191,23 @@ require('packer').startup(function()
         buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
         buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
         buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-        print('LSP Started.')
+        print'LSP Started.'
       end
 
-      -- Setup servers
-      local pid = vim.fn.getpid()
-
-      local omnisharp_bin = vim.fn.exepath('omnisharp')
-      nvim_lsp.omnisharp.setup{
-          cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+      lsp_installer.on_server_ready(function(server)
+        local opts = {
           on_attach = on_attach,
           capabilities = capabilities
-      }
+        }
+
+        server:setup(opts)
+        vim.cmd [[ do User LspAttachBuffers ]]
+      end)
     end
   }
   use {
+
+            
     'glepnir/lspsaga.nvim',
     config = function()
       require'lspsaga'.init_lsp_saga()
