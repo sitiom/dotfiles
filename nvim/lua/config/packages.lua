@@ -38,6 +38,7 @@ require('packer').startup(function()
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
+  use 'tversteeg/registers.nvim'
   use {
     'windwp/nvim-autopairs',
     config = function() require'nvim-autopairs'.setup{} end
@@ -206,8 +207,6 @@ require('packer').startup(function()
     end
   }
   use {
-
-            
     'glepnir/lspsaga.nvim',
     config = function()
       require'lspsaga'.init_lsp_saga()
