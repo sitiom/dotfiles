@@ -38,6 +38,10 @@ require('packer').startup(function()
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
+  use {
+    'karb94/neoscroll.nvim',
+    config = function() require'neoscroll'.setup() end
+  }
   use 'tversteeg/registers.nvim'
   use {
     'windwp/nvim-autopairs',
