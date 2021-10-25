@@ -68,11 +68,15 @@ require('packer').startup(function()
   use 'pgdouyon/vim-evanesco'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-repeat'
-  use 'tpope/vim-surround'
+  use {
+    'blackCauldron7/surround.nvim',
+    config = function()
+      require"surround".setup{ mappings_style = "surround" }
+    end
+  }
   use 'tpope/vim-unimpaired'
-  use { 'lukas-reineke/indent-blankline.nvim' }
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'simeji/winresizer'
-  use { 'famiu/nvim-reload', requires = 'nvim-lua/plenary.nvim' }
   use 'yamatsum/nvim-cursorline'
   use 'roxma/vim-paste-easy'
 
