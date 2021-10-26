@@ -52,22 +52,13 @@ require('packer').startup(function()
     config = function() require('gitsigns').setup() end,
     requires = 'nvim-lua/plenary.nvim'
   }
+  use 'iwataka/cowsay.vim'
   use {
-    'mhinz/vim-startify',
-    config = function()
-      vim.g.startify_session_persistence = 1
-      vim.g.startify_fortune_use_unicode = 1
-      -- Use nvim-web-devicons instead
-      function _G.webDevIcons(path)
-        local filename = vim.fn.fnamemodify(path, ':t')
-        local extension = vim.fn.fnamemodify(path, ':e')
-        return require'nvim-web-devicons'.get_icon(filename, extension, { default = true })
-      end
-      vim.cmd [[
-      function! StartifyEntryFormat() abort
-        return 'v:lua.webDevIcons(absolute_path) . " " . entry_path'
-      endfunction
-      ]]
+    'goolord/alpha-nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function ()
+      require'alpha.themes.startify'.section.header.val = vim.fn['cowsay#cowsay'](require'alpha.fortune'(), 'milk')
+      require'alpha'.setup(require'alpha.themes.startify'.opts)
     end
   }
   use 'pgdouyon/vim-evanesco'
@@ -80,7 +71,10 @@ require('packer').startup(function()
     end
   }
   use 'tpope/vim-unimpaired'
-  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+     config = function() vim.g.indentLine_fileTypeExclude = {'alpha'} end
+  }
   use 'simeji/winresizer'
   use 'yamatsum/nvim-cursorline'
   use 'roxma/vim-paste-easy'
@@ -160,23 +154,28 @@ require('packer').startup(function()
         }, {
           { name = 'buffer' },
         })
-    }
-
-    require'nvim-autopairs.completion.cmp'.setup{
-      map_cr = true,
-      map_complete = false,
-      auto_select = true,
-      insert = false,
-      map_char = {
-        all = '(',
-        tex = '{'
       }
-    }
+
+      require'nvim-autopairs.completion.cmp'.setup{
+        map_cr = true,
+        map_complete = false,
+        auto_select = true,
+        insert = false,
+        map_char = {
+          all = '(',
+          tex = '{'
+        }
+      }
     end
   }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use {
+    'tami5/lspsaga.nvim',
+    branch = 'nvim51',
+    config = function() require'lspsaga'.init_lsp_saga() end
+  }
   use {
     'williamboman/nvim-lsp-installer',
     config = function()
@@ -186,16 +185,25 @@ require('packer').startup(function()
       -- after the language server attaches to the current buffer
       local on_attach = function(client, bufnr)
         local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-        --Enable completion triggered by <c-x><c-o>
-        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         -- Mappings.
         local opts = { noremap=true, silent=true }
         buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
         buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
         buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+        vimp.nnoremap({'silent'}, 'gh', function() require'lspsaga.provider'.lsp_finder() end)
+        vimp.nnoremap({'silent'}, '<leader>ca', function() require'lspsaga.codeaction'.code_action() end)
+        vimp.vnoremap({'silent'}, '<leader>ca', function() require'lspsaga.codeaction'.range_code_action() end)
+        vimp.nnoremap({'silent'}, 'K', function() require'lspsaga.hover'.render_hover_doc() end)
+        -- vimp.nnoremap({'silent'}, '<C-f>', function() require'lspsaga.action'.smart_scroll_with_saga(1) end)
+        -- vimp.nnoremap({'silent'}, '<C-b>', function() require'lspsaga.action'.smart_scroll_with_saga(-1) end)
+        vimp.nnoremap({'silent'}, 'gs', function() require'lspsaga.signaturehelp'.signature_help() end)
+        vimp.nnoremap({'silent'}, 'gr', function() require'lspsaga.rename'.rename() end)
+        -- vimp.nnoremap({'silent'}, 'gd', function() require'lspsaga.provider'.preview_definition() end)
+        vimp.nnoremap({'silent'}, '<leader>cd', function() require'lspsaga.diagnostic'.show_line_diagnostics() end)
+        vimp.nnoremap({'silent'}, '<leader>cc', function() require'lspsaga.diagnostic'.show_cursor_diagnostics() end)
+        vimp.nnoremap({'silent'}, '[d', function() require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev() end)
+        vimp.nnoremap({'silent'}, ']d', function() require'lspsaga.diagnostic'.lsp_jump_diagnostic_next() end)
         print'LSP Started.'
       end
 
@@ -208,26 +216,6 @@ require('packer').startup(function()
         server:setup(opts)
         vim.cmd [[ do User LspAttachBuffers ]]
       end)
-    end
-  }
-  use {
-    'glepnir/lspsaga.nvim',
-    config = function()
-      require'lspsaga'.init_lsp_saga()
-
-      vimp.nnoremap({'silent'}, 'gh', function() require'lspsaga.provider'.lsp_finder() end)
-      vimp.nnoremap({'silent'}, '<leader>ca', function() require'lspsaga.codeaction'.code_action() end)
-      vimp.vnoremap({'silent'}, '<leader>ca', function() require'lspsaga.codeaction'.range_code() end)
-      vimp.nnoremap({'silent'}, 'K', function() require'lspsaga.hover'.render_hover_doc() end)
-      vimp.nnoremap({'silent'}, '<C-f>', function() require'lspsaga.action'.smart_scroll_with_saga(1) end)
-      vimp.nnoremap({'silent'}, '<C-b>', function() require'lspsaga.action'.smart_scroll_with_saga(-1) end)
-      vimp.nnoremap({'silent'}, 'gs', function() require'lspsaga.signaturehelp'.signature_help() end)
-      vimp.nnoremap({'silent'}, 'gr', function() require'lspsaga.rename'.rename() end)
-      vimp.nnoremap({'silent'}, 'gd', function() require'lspsaga.provider'.preview_definition() end)
-      vimp.nnoremap({'silent'}, '<leader>cd', function() require'lspsaga.diagnostic'.show_line_diagnostics() end)
-      vimp.nnoremap({'silent'}, '<leader>cc', function() require'lspsaga.diagnostic'.show_cursor_diagnostics() end)
-      vimp.nnoremap({'silent'}, '[d', function() require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev() end)
-      vimp.nnoremap({'silent'}, ']d', function() require'lspsaga.diagnostic'.lsp_jump_diagnostic_next() end)
     end
   }
   use 'folke/lsp-colors.nvim'
