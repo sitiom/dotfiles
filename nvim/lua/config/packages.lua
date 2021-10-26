@@ -72,6 +72,13 @@ require('packer').startup(function()
   }
   use 'tpope/vim-unimpaired'
   use {
+    'winston0410/range-highlight.nvim',
+    requires = 'winston0410/cmd-parser.nvim',
+    config = function()
+      require'range-highlight'.setup{}
+    end
+  }
+  use {
     'lukas-reineke/indent-blankline.nvim',
      config = function() vim.g.indentLine_fileTypeExclude = {'alpha'} end
   }
