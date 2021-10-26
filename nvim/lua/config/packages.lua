@@ -57,8 +57,30 @@ require('packer').startup(function()
     'goolord/alpha-nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function ()
-      require'alpha.themes.startify'.section.header.val = vim.fn['cowsay#cowsay'](require'alpha.fortune'(), 'milk')
-      require'alpha'.setup(require'alpha.themes.startify'.opts)
+      local startify = require'alpha.themes.startify'
+
+      startify.section.header.val = vim.fn['cowsay#cowsay'](require'alpha.fortune'(), 'milk')
+      startify.section.top_buttons.val = {
+        startify.button("e", "New file", ":ene <CR>"),
+        startify.button("s", "Open session", ":SearchSession<CR>"),
+      }
+
+      require("alpha").setup(startify.opts)
+    end
+  }
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      local opts = {
+        log_level = 'info',
+        auto_session_enable_last_session = false,
+        auto_session_root_dir = vim.fn.stdpath('data').."/sessions/",
+        auto_session_enabled = false,
+        auto_save_enabled = nil,
+        auto_restore_enabled = nil,
+        auto_session_sppress_dirs = nil
+      }
+      require'auto-session'.setup(opts)
     end
   }
   use 'pgdouyon/vim-evanesco'
@@ -260,12 +282,14 @@ require('packer').startup(function()
   -- Fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'rmagatti/session-lens'},
     config = function()
       vimp.nnoremap('<leader>ff', function() require('telescope.builtin').find_files() end)
       vimp.nnoremap('<leader>fg', function() require('telescope.builtin').live_grep() end)
       vimp.nnoremap('<leader>fb', function() require('telescope.builtin').buffers() end)
       vimp.nnoremap('<leader>fh', function() require('telescope.builtin').help_tags() end)
+
+      require("telescope").load_extension("session-lens")
     end
   }
 

@@ -8,6 +8,7 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.updatetime = 100
 vim.o.mouse = 'a'
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
 
 -- Indentation
 vim.o.expandtab = true
