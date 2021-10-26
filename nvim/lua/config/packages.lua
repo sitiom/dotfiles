@@ -68,6 +68,7 @@ require('packer').startup(function()
       require("alpha").setup(startify.opts)
     end
   }
+  use 'tpope/vim-sleuth'
   use {
     'rmagatti/auto-session',
     config = function()
