@@ -274,8 +274,20 @@ require('packer').startup(function()
   -- Integrations
   use 'editorconfig/editorconfig-vim'
   use {
+    'voldikss/vim-floaterm',
+    config = function()
+      vimp.nnoremap({'silent'}, '<F7>', ':FloatermNew<CR>')
+      vimp.tnoremap({'silent'}, '<F7>', '<C-\\><C-n>:FloatermNew<CR>')
+      vimp.nnoremap({'silent'}, '<F8>', ':FloatermPrev<CR>')
+      vimp.tnoremap({'silent'}, '<F8>', '<C-\\><C-n>:FloatermPrev<CR>')
+      vimp.nnoremap({'silent'}, '<F9>', ':FloatermNext<CR>')
+      vimp.tnoremap({'silent'}, '<F9>', '<C-\\><C-n>:FloatermNext<CR>')
+      vimp.nnoremap({'silent'}, '<F12>', ':FloatermToggle<CR>')
+      vimp.tnoremap({'silent'}, '<F12>', '<C-\\><C-n>:FloatermToggle<CR>')
+    end
+  }
+  use {
     'ptzz/lf.vim',
-    after = 'vim-floaterm',
     config = function()
       vim.g.lf_map_keys = 0
       vim.g.lf_replace_netrw = 1
@@ -296,19 +308,6 @@ require('packer').startup(function()
         }
       }
     }
-  }
-  use {
-    'voldikss/vim-floaterm',
-    setup = function()
-      vimp.nnoremap({'silent'}, '<F7>', ':FloatermNew<CR>')
-      vimp.tnoremap({'silent'}, '<F7>', '<C-\\><C-n>:FloatermNew<CR>')
-      vimp.nnoremap({'silent'}, '<F8>', ':FloatermPrev<CR>')
-      vimp.tnoremap({'silent'}, '<F8>', '<C-\\><C-n>:FloatermPrev<CR>')
-      vimp.nnoremap({'silent'}, '<F9>', ':FloatermNext<CR>')
-      vimp.tnoremap({'silent'}, '<F9>', '<C-\\><C-n>:FloatermNext<CR>')
-      vimp.nnoremap({'silent'}, '<F12>', ':FloatermToggle<CR>')
-      vimp.tnoremap({'silent'}, '<F12>', '<C-\\><C-n>:FloatermToggle<CR>')
-    end
   }
   use {
     'andweeb/presence.nvim',
