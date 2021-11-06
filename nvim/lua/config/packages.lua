@@ -170,7 +170,7 @@ require('packer').startup(function()
           ['<C-e>'] = cmp.mapping.close(),
           ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
           })
         },
         sources = cmp.config.sources({
@@ -180,16 +180,9 @@ require('packer').startup(function()
         })
       }
 
-      require'nvim-autopairs.completion.cmp'.setup{
-        map_cr = true,
-        map_complete = false,
-        auto_select = true,
-        insert = false,
-        map_char = {
-          all = '(',
-          tex = '{'
-        }
-      }
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      local cmp = require('cmp')
+      cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
     end
   }
 
