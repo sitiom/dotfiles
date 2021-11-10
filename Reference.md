@@ -6,7 +6,6 @@
 - neofetch
 - neovim
 - oh-my-posh
-- vim-packager
 - zoxide
 - firenvim
 
