@@ -26,6 +26,9 @@ jobs:
   dependabot-auto-merge:
     needs: [test-ubuntu, test-windows]
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
     if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
     steps:
       - uses: fastify/github-action-merge-dependabot@v3.0.2
