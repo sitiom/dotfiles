@@ -22,7 +22,7 @@ if ! zgenom saved; then
     zgenom ohmyzsh plugins/last-working-dir
 
     zgenom load zsh-users/zsh-autosuggestions
-    zgenom load zdharma/fast-syntax-highlighting
+    zgenom load zdharma-continuum/fast-syntax-highlighting
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load MichaelAquilina/zsh-you-should-use
     (( $+commands[lf] )) && zgenom load gokcehan/lf etc/lfcd.sh
