@@ -5,13 +5,15 @@
 - lf
 - neofetch
 - neovim
-- oh-my-posh
 - zoxide
 - firenvim
 
 ### Linux
 - zgenom (automatically cloned when not found)
 - zsh
+
+### Windows
+- oh-my-posh
 
 ### PowerShell
 
