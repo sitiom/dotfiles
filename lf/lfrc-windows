@@ -1,12 +1,10 @@
 # Basic Settings
 set shell pwsh
-set smartcase on
-set ignorecase on
 set incsearch on
-set hidden false
 set drawbox true
 set icons true
 set info size:time
+set tabstop 4
 
 # Mappings
 map D delete
