@@ -111,6 +111,16 @@ require('packer').startup(function()
   use 'yamatsum/nvim-cursorline'
   use 'roxma/vim-paste-easy'
 
+  -- Navigation
+  use {
+    'nvim-scrollbar',
+    requires = { 'kevinhwang91/nvim-hlslens' },
+    config = function()
+      require'scrollbar'.setup()
+      require'scrollbar.handlers.search'.setup()
+    end
+  }
+
   -- Undo tree
   use {
     'simnalamburt/vim-mundo', 
@@ -123,9 +133,6 @@ require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function() require'nvim-tree'.setup {} end
   }
-
-  -- Navigation
-  use 'dstein64/nvim-scrollview'
 
   -- Syntax highlighting
   use {
