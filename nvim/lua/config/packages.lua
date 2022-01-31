@@ -17,12 +17,7 @@ require('packer').startup(function()
   use {
     'famiu/feline.nvim',
     config = function()
-      require('feline').setup{
-          colors = {
-            fg = '#D4D4D4',
-            bg = '#161616'
-          }
-      }
+      require('feline').setup()
     end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
@@ -109,6 +104,13 @@ require('packer').startup(function()
   use {
     'simnalamburt/vim-mundo', 
     config = function() vimp.nnoremap('<F5>', ':MundoToggle<CR>') end
+  }
+
+  -- File explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function() require'nvim-tree'.setup {} end
   }
 
   -- Navigation
@@ -266,30 +268,6 @@ require('packer').startup(function()
 
   -- Integrations
   use 'editorconfig/editorconfig-vim'
-  use {
-    'voldikss/vim-floaterm',
-    config = function()
-      vimp.nnoremap({'silent'}, '<F7>', ':FloatermNew<CR>')
-      vimp.tnoremap({'silent'}, '<F7>', '<C-\\><C-n>:FloatermNew<CR>')
-      vimp.nnoremap({'silent'}, '<F8>', ':FloatermPrev<CR>')
-      vimp.tnoremap({'silent'}, '<F8>', '<C-\\><C-n>:FloatermPrev<CR>')
-      vimp.nnoremap({'silent'}, '<F9>', ':FloatermNext<CR>')
-      vimp.tnoremap({'silent'}, '<F9>', '<C-\\><C-n>:FloatermNext<CR>')
-      vimp.nnoremap({'silent'}, '<F12>', ':FloatermToggle<CR>')
-      vimp.tnoremap({'silent'}, '<F12>', '<C-\\><C-n>:FloatermToggle<CR>')
-    end
-  }
-  use {
-    'ptzz/lf.vim',
-    config = function()
-      vim.g.lf_map_keys = 0
-      vim.g.lf_replace_netrw = 1
-      vim.g.lf_width = 0.9
-      vim.g.lf_height = 0.9
-
-      vimp.nnoremap('<C-p>', ':Lf<CR>')
-    end
-  }
   use {
     'nanotee/zoxide.vim',
     requires = {

@@ -1,5 +1,5 @@
 vim.o.termguicolors = true
-vim.o.guifont = 'Delugia Nerd Font:' .. (vim.fn.exists('g:started_by_firenvim') ~= 1 and "h15" or "h10")
+vim.o.guifont = 'Delugia Nerd Font:h10'
 vim.g.vscode_style = "dark"
 vim.cmd 'colorscheme vscode'
 vim.wo.list = true
