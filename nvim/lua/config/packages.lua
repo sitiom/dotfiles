@@ -75,7 +75,18 @@ require('packer').startup(function()
       require'auto-session'.setup(opts)
     end
   }
-  use 'pgdouyon/vim-evanesco'
+  use {
+    'kevinhwang91/nvim-hlslens',
+    config = function()
+      vimp.nnoremap({'silent'}, 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap({'silent'}, 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap('*', "*<Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap('#', "#<Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap('g*', "g*<Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap('g#', "g#<Cmd>lua require('hlslens').start()<CR>")
+      vimp.nnoremap({'silent'}, '<leader>l', ":noh<CR>")
+    end
+  }
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-repeat'
   use {
