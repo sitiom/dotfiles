@@ -1,5 +1,6 @@
 # Basic Settings
 set shell pwsh
+set hidden off
 set incsearch on
 set drawbox true
 set icons true

@@ -1,5 +1,6 @@
 # Basic Settings
 set incsearch on
+set hidden off
 set drawbox true
 set icons true
 set info size:time
