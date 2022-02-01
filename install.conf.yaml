@@ -22,4 +22,4 @@
       path: git/.gitconfig
 
 - shell:
-  - [git submodule update --init --remote --force --recursive, Installing submodules]
+  - [git submodule update --remote --recursive --force, Installing submodules]
