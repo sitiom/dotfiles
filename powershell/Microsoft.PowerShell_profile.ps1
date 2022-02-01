@@ -30,6 +30,8 @@ function OnViModeChange {
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $function:OnViModeChange
+# https://github.com/PowerShell/PSReadLine/issues/906
+Set-PSReadLineKeyHandler -Chord 'Ctrl+Oem4' -Function ViCommandMode
 
 Import-Module PSFzf
 Import-Module Terminal-Icons
