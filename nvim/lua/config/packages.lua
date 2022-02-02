@@ -113,7 +113,7 @@ require('packer').startup(function()
 
   -- Navigation
   use {
-    'nvim-scrollbar',
+    'petertriho/nvim-scrollbar',
     requires = { 'kevinhwang91/nvim-hlslens' },
     config = function()
       require'scrollbar'.setup()
