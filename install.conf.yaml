@@ -6,6 +6,8 @@
 - clean: ['~']
 
 - link:
+    ~/.config/kitty/kitty.conf:
+      path: kitty/kitty.conf
     ~/.config/nvim/lua:
       path: nvim/lua
     ~/.config/nvim/init.lua:
