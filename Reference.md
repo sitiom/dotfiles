@@ -7,6 +7,8 @@
 - neovim
 - zoxide
 - firenvim
+- kitty
+- VSCodium
 
 ### Linux
 - zgenom (automatically cloned when not found)
