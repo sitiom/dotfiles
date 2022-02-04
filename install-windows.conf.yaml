@@ -8,8 +8,6 @@
 - link:
     ~/AppData/Roaming/VSCodium/product.json:
       path: VSCodium/product.json
-    ~/AppData/Roaming/VSCodium/User/settings.json:
-      path: VSCodium/User/settings.json
     ~/AppData/Local/nvim/lua:
       path: nvim/lua
     ~/AppData/Local/nvim/init.lua:

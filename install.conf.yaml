@@ -8,8 +8,6 @@
 - link:
     ~/.config/VSCodium/product.json:
       path: VSCodium/product.json
-    ~/.config/VSCodium/User/settings.json:
-      path: VSCodium/User/settings.json
     ~/.config/kitty:
       path: kitty
     ~/.config/nvim/lua:
