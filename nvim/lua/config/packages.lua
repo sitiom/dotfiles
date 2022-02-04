@@ -22,11 +22,12 @@ require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use {
-  'akinsho/nvim-bufferline.lua',
+  'akinsho/bufferline.nvim',
     config = function() require("bufferline").setup() end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use 'Mofiqul/vscode.nvim'
+  use 'xiyaowong/nvim-transparent'
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
