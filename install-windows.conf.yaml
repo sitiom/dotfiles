@@ -8,6 +8,8 @@
 - link:
     ~/AppData/Roaming/VSCodium/product.json:
       path: VSCodium/product.json
+    ~/AppData/Roaming/VSCodium/User/globalStorage/zokugun.sync-settings/settings.yml:
+      path: VSCodium/User/globalStorage/zokugun.sync-settings/settings.yml
     ~/AppData/Local/nvim/lua:
       path: nvim/lua
     ~/AppData/Local/nvim/init.lua:
