@@ -1,0 +1,6 @@
+resources:
+  - extensions
+  - keybindings
+  - settings
+  - snippets
+  - uiState
