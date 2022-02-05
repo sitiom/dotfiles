@@ -11,9 +11,10 @@
     "editor.semanticHighlighting.enabled": true,
     "editor.smoothScrolling": true,
     "editor.wordWrap": "on",
-    "syncSettings.resources": ["extensions", "keybindings", "settings", "snippets", "uiState"],
+    "syncSettings.resources": ["extensions", "keybindings", "settings", "snippets"],
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+    "workbench.colorTheme": "Dark+ Material",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.smoothScrolling": true,
     // File type specific configs
@@ -41,6 +42,5 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "workbench.colorTheme": "Dark+ Material"
+    }
 }
