@@ -21,12 +21,11 @@ workbench.sideBar.position: "0"
 workbench.panel.alignment: center
 workbench.activityBar.hidden: "false"
 workbench.statusBar.hidden: "false"
-workbench.explorer.views.state.hidden: '[{"id":"outline","isHidden":false},{"id":"timeline","isHidden":false},{"id":"workbench.explorer.openEditorsView","isHidden":true},{"id":"workbench.explorer.emptyView","isHidden":false},{"id":"npm","isHidden":true}]'
 PKief.material-icon-theme: '{"material-icon-theme.version":"4.12.1"}'
 workbench.view.debug.state.hidden: '[{"id":"workbench.debug.welcome","isHidden":false},{"id":"workbench.debug.variablesView","isHidden":false},{"id":"workbench.debug.watchExpressionsView","isHidden":false},{"id":"workbench.debug.callStackView","isHidden":false},{"id":"workbench.debug.loadedScriptsView","isHidden":false},{"id":"workbench.debug.breakPointsView","isHidden":false},{"id":"jsBrowserBreakpoints","isHidden":false},{"id":"jsExcludedCallers","isHidden":false}]'
-workbench.statusbar.hidden: '["status.workspaceTrust.1643952022878","status.workspaceTrust.1643956352433","status.workspaceTrust.1643957472137","status.workspaceTrust.1643958309829"]'
-workbench.views.extensions.installed.size: "11"
 workbench.sideBar.size: "170"
+workbench.views.extensions.installed.size: "13"
+workbench.explorer.views.state.hidden: '[{"id":"outline","isHidden":false},{"id":"timeline","isHidden":false},{"id":"workbench.explorer.openEditorsView","isHidden":true},{"id":"workbench.explorer.emptyView","isHidden":false},{"id":"npm","isHidden":true},{"id":"workbench.explorer.fileView","isHidden":false}]'
 workbench.activity.placeholderViewlets: "[{\"id\":\"workbench.view.explorer\",\
   \"themeIcon\":{\"id\":\"explorer-view-icon\"},\"name\":\"Explorer\",\"isBuilt\
   in\":true,\"views\":[{\"when\":\"openEditorsVisible\"},{},{},{\"when\":\"time\
@@ -77,3 +76,4 @@ workbench.activity.placeholderViewlets: "[{\"id\":\"workbench.view.explorer\",\
 workbench.panel.pinnedPanels: '[{"id":"workbench.panel.markers","name":"Problems","pinned":true,"order":0,"visible":true},{"id":"workbench.panel.output","name":"Output","pinned":true,"order":1,"visible":true},{"id":"workbench.panel.repl","name":"Debug
   Console","pinned":true,"order":2,"visible":true},{"id":"terminal","name":"Terminal","pinned":true,"order":3,"visible":true},{"id":"refactorPreview","name":"Refactor
   Preview","pinned":true,"visible":false}]'
+workbench.statusbar.hidden: '["status.workspaceTrust.1643952022878","status.workspaceTrust.1643956352433","status.workspaceTrust.1643957472137","status.workspaceTrust.1643958309829","status.workspaceTrust.1643979827824","status.workspaceTrust.1644033879308","status.workspaceTrust.723f8a08528b5ffa8e7b9bdfe12f765b","status.workspaceTrust.1644065831321"]'

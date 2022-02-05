@@ -41,5 +41,6 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "workbench.colorTheme": "Dark+ Material"
 }
