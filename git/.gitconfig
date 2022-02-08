@@ -1,7 +1,7 @@
 [user]
 	email = sitiom@disroot.org
 	name = Ryan Caezar Itang
-	signingkey = A31DFEFDEFB80B347319A78CEB390080129A0E48
+	signingkey = 9763AE10706A1E8FCF74E5AEF6FD3820BCBC1A98
 [core]
 	editor = nvim
 	autocrlf = false
