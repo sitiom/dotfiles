@@ -167,6 +167,6 @@ ex=:\
 "
 
 # WSL-specific variables
-if grep -iq microsoft /proc/version; then
+if [[ "$(uname 2> /dev/null)" == "Linux" ]] && grep -iq microsoft /proc/version; then
     export GPG_TTY=$(tty)
 fi
