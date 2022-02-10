@@ -17,16 +17,22 @@ require('packer').startup(function()
   use {
     'famiu/feline.nvim',
     config = function()
-      require('feline').setup()
+      require('feline').setup{
+        components = require('catppuccin.core.integrations.feline')
+      }
     end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use {
-  'akinsho/bufferline.nvim',
+    'akinsho/bufferline.nvim',
     config = function() require("bufferline").setup() end,
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use 'Mofiqul/vscode.nvim'
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin"
+  }
   use 'xiyaowong/nvim-transparent'
 
   -- Enhancements
@@ -111,6 +117,12 @@ require('packer').startup(function()
   use 'simeji/winresizer'
   use 'yamatsum/nvim-cursorline'
   use 'roxma/vim-paste-easy'
+  use {
+    'lambdalisue/suda.vim',
+    config = function()
+      vim.g.suda_smart_edit = 1
+    end
+  }
 
   -- Navigation
   use {
