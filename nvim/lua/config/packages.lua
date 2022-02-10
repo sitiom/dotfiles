@@ -33,7 +33,6 @@ require('packer').startup(function()
     "catppuccin/nvim",
     as = "catppuccin"
   }
-  use 'xiyaowong/nvim-transparent'
 
   -- Enhancements
   use 'jeffkreeftmeijer/vim-numbertoggle'
