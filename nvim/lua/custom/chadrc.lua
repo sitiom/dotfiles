@@ -8,7 +8,8 @@ M.options = {
 }
 
 M.ui = {
-  theme = "catppuccin"
+  theme = "catppuccin",
+  transparency = true
 }
 
 M.plugins = {
