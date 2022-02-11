@@ -8,10 +8,6 @@
                                                   
 ]]
 
-require'config.shell'
-require'config.packages'
-
-require'config.appearance'
-require'config.options'
-require'config.autocmd'
-
+require'custom.shell'
+require'custom.options'
+require'custom.autocmds'

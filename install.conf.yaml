@@ -12,10 +12,8 @@
       path: VSCodium/User/globalStorage/zokugun.sync-settings/settings.yml
     ~/.config/kitty:
       path: kitty
-    ~/.config/nvim/lua:
-      path: nvim/lua
-    ~/.config/nvim/init.lua:
-      path: nvim/init.lua
+    ~/.config/nvim/lua/custom:
+      path: nvim/lua/custom
     ~/.config/lf/lfrc:
       path: lf/lfrc
     ~/.zshrc:

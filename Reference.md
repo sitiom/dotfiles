@@ -4,11 +4,13 @@
 - fzf
 - lf
 - neofetch
-- neovim
 - zoxide
-- firenvim
 - kitty
 - VSCodium
+
+### Neovim
+- firenvim
+- NvChad
 
 ### Linux
 - zgenom (automatically cloned when not found)
