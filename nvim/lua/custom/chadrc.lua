@@ -16,7 +16,11 @@ M.plugins = {
     colorizer = true,
     dashboard = true,
   },
-  install = userPlugins,
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.plugins.configs.lspconfig"
+    }
+  },
   default_plugin_config_replace = {
     comment = {
       pre_hook = function(ctx)
@@ -35,7 +39,8 @@ M.plugins = {
         }
       end
     }
-  }
+  },
+  install = userPlugins,
 }
 
 return M
