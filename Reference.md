@@ -7,6 +7,8 @@
 - zoxide
 - kitty
 - VSCodium
+- python
+- npm
 
 ### Neovim
 - firenvim
