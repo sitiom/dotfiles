@@ -39,9 +39,35 @@ M.plugins = {
           location = location,
         }
       end
+    },
+    nvim_cmp = {
+      formatting = {
+        format = function(entry, vim_item)
+          local icons = require "plugins.configs.lspkind_icons"
+          vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            copilot = "[COP]",
+            nvim_lua = "[Lua]",
+            buffer = "[BUF]",
+          })[entry.source.name]
+
+          return vim_item
+        end,
+      },
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "copilot" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+      }
     }
   },
   install = userPlugins,
 }
 
 return M
+

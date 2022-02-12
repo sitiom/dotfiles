@@ -84,5 +84,14 @@ return {
     "luukvbaal/stabilize.nvim",
     config = function() require"stabilize".setup() end
   },
-  "williamboman/nvim-lsp-installer"
+  "williamboman/nvim-lsp-installer",
+  {
+    "gelfand/copilot.vim",
+    config = function()
+      -- Copilot assume mapped
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_no_tab_map = true
+    end
+  },
+  "hrsh7th/cmp-copilot"
 }
