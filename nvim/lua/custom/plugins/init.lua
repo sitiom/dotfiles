@@ -93,5 +93,9 @@ return {
       vim.g.copilot_no_tab_map = true
     end
   },
-  "hrsh7th/cmp-copilot"
+  "hrsh7th/cmp-copilot",
+  {
+    "p00f/nvim-ts-rainbow",
+    after = "nvim-treesitter"
+  }
 }

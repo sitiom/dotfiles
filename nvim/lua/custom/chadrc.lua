@@ -23,7 +23,7 @@ M.plugins = {
     }
   },
   default_plugin_config_replace = {
-    comment = {
+    nvim_comment = {
       pre_hook = function(ctx)
         local U = require 'Comment.utils'
 
@@ -63,6 +63,14 @@ M.plugins = {
         { name = "buffer" },
         { name = "nvim_lua" },
         { name = "path" },
+      },
+      experimental = {
+        ghost_text = true,
+      },
+    },
+    nvim_treesitter = {
+      rainbow = {
+        enable = true
       }
     }
   },
