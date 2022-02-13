@@ -93,9 +93,17 @@ return {
       vim.g.copilot_no_tab_map = true
     end
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    after = "nvim-lspconfig",
+    config = function()
+      require"custom.plugins.configs.null-ls".setup()
+    end
+  },
   "hrsh7th/cmp-copilot",
   {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter"
-  }
+  },
 }
