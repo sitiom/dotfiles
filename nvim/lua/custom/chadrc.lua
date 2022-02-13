@@ -68,11 +68,19 @@ M.plugins = {
         ghost_text = true,
       },
     },
+    nvim_tree = {
+      view = {
+        hide_root_folder = false,
+      },
+      git = {
+        enable = true,
+      },
+    },
     nvim_treesitter = {
       rainbow = {
         enable = true
-      }
-    }
+      },
+    },
   },
   install = userPlugins,
 }
