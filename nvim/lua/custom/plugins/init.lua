@@ -46,14 +46,15 @@ return {
      vim.g.suda_smart_edit = 1
    end
  },
- {
-   "petertriho/nvim-scrollbar",
-   requires = { 'kevinhwang91/nvim-hlslens' },
-   config = function()
-     require"scrollbar".setup()
-     require"scrollbar.handlers.search".setup()
-   end
- },
+ -- https://github.com/petertriho/nvim-scrollbar/issues/36
+ -- {
+ --   "petertriho/nvim-scrollbar",
+ --   after = 'kevinhwang91/nvim-hlslens',
+ --   config = function()
+ --     require"scrollbar".setup()
+ --     require"scrollbar.handlers.search".setup()
+ --   end
+ -- },
  { 
    "JoosepAlviste/nvim-ts-context-commentstring",
      after = "nvim-treesitter",
@@ -70,8 +71,10 @@ return {
  "gpanders/editorconfig.nvim",
  {
    "andweeb/presence.nvim",
-   setup = function() vim.g.presence_main_image = "file" end,
-   cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end
+   cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end,
+   config = function()
+     require"presence".setup { main_image = "file" }
+   end,
  },
  {
    "glacambre/firenvim",
@@ -86,12 +89,22 @@ return {
   },
   "williamboman/nvim-lsp-installer",
   {
+    "j-hui/fidget.nvim",
+    config = function()
+      require"fidget".setup {
+        window = {
+          blend = 0,
+        }
+      }
+    end,
+  },
+  {
     "gelfand/copilot.vim",
     config = function()
       -- Copilot assume mapped
       vim.g.copilot_assume_mapped = true
       vim.g.copilot_no_tab_map = true
-    end
+    end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
