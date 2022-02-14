@@ -73,7 +73,7 @@ return {
    "andweeb/presence.nvim",
    cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end,
    config = function()
-     require"presence".setup { main_image = "file" }
+     require"presence":setup { main_image = "file" }
    end,
  },
  {
