@@ -18,6 +18,7 @@
 ### Linux
 - zgenom (automatically cloned when not found)
 - zsh
+- unzip
 
 ### Windows
 - oh-my-posh
