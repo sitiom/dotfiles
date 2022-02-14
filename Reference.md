@@ -9,6 +9,7 @@
 - VSCodium
 - python
 - npm
+- wget
 
 ### Neovim
 - firenvim
