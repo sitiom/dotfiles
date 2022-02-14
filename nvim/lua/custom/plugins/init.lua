@@ -46,15 +46,14 @@ return {
      vim.g.suda_smart_edit = 1
    end
  },
- -- https://github.com/petertriho/nvim-scrollbar/issues/36
- -- {
- --   "petertriho/nvim-scrollbar",
- --   after = 'kevinhwang91/nvim-hlslens',
- --   config = function()
- --     require"scrollbar".setup()
- --     require"scrollbar.handlers.search".setup()
- --   end
- -- },
+ {
+   "petertriho/nvim-scrollbar",
+   after = 'nvim-hlslens',
+   config = function()
+     require"scrollbar".setup()
+     require"scrollbar.handlers.search".setup()
+   end
+ },
  { 
    "JoosepAlviste/nvim-ts-context-commentstring",
      after = "nvim-treesitter",
