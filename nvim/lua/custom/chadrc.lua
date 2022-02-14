@@ -47,8 +47,8 @@ M.plugins = {
           vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 
           vim_item.menu = ({
-            nvim_lsp = "[LSP]",
             copilot = "[COP]",
+            nvim_lsp = "[LSP]",
             nvim_lua = "[Lua]",
             buffer = "[BUF]",
           })[entry.source.name]
@@ -57,8 +57,8 @@ M.plugins = {
         end,
       },
       sources = {
-        { name = "nvim_lsp" },
         { name = "copilot" },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "nvim_lua" },
