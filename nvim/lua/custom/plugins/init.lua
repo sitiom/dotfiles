@@ -118,4 +118,12 @@ return {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter"
   },
+  {
+    "jvgrootveld/telescope-zoxide",
+    after = "telescope.nvim",
+    requires = "nvim-lua/popup.nvim",
+    config =function ()
+      require"telescope".load_extension("zoxide")
+    end
+  }
 }
