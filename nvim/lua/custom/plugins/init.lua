@@ -23,65 +23,58 @@ return {
     config = function()
       require"todo-comments".setup()
     end
- },
- "tpope/vim-repeat",
- {
-   "blackCauldron7/surround.nvim",
-   config = function()
-     require"surround".setup{ mappings_style = "surround" }
-   end
- },
- "tpope/vim-unimpaired",
- {
-   "winston0410/range-highlight.nvim",
-   requires = 'winston0410/cmd-parser.nvim',
-   config = function()
-     require'range-highlight'.setup{}
-   end
- },
- "yamatsum/nvim-cursorline",
- {
-   "lambdalisue/suda.vim",
-   config = function()
-     vim.g.suda_smart_edit = 1
-   end
- },
- {
-   "petertriho/nvim-scrollbar",
-   after = 'nvim-hlslens',
-   config = function()
-     require"scrollbar".setup()
-     require"scrollbar.handlers.search".setup()
-   end
- },
- { 
-   "JoosepAlviste/nvim-ts-context-commentstring",
-     after = "nvim-treesitter",
-     config = function()
-       require'nvim-treesitter.configs'.setup {
-         context_commentstring = {
-           enable = true,
-           enable_autocmd = false,
-         }
-       }
-     end
- },
- "VebbNix/lf-vim",
- "gpanders/editorconfig.nvim",
- {
-   "andweeb/presence.nvim",
-   cond = function() return vim.fn.exists('g:started_by_firenvim') ~= 1 end,
-   config = function()
-     require"presence":setup { main_image = "file" }
-   end,
- },
- {
-   "glacambre/firenvim",
-   run = function() vim.fn['firenvim#install'](0) end,
-   config = function()
-     require"custom.plugins.configs.firenvim"
-   end
   },
+  "tpope/vim-repeat",
+  {
+    "blackCauldron7/surround.nvim",
+    config = function()
+      require"surround".setup{ mappings_style = "surround" }
+    end
+  },
+  "tpope/vim-unimpaired",
+  {
+    "winston0410/range-highlight.nvim",
+    requires = 'winston0410/cmd-parser.nvim',
+    config = function()
+      require'range-highlight'.setup{}
+    end
+  },
+  "yamatsum/nvim-cursorline",
+  {
+    "lambdalisue/suda.vim",
+    config = function()
+      vim.g.suda_smart_edit = 1
+    end
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    after = 'nvim-hlslens',
+    config = function()
+      require"scrollbar".setup()
+      require"scrollbar.handlers.search".setup()
+    end
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+      after = "nvim-treesitter",
+      config = function()
+        require'nvim-treesitter.configs'.setup {
+          context_commentstring = {
+            enable = true,
+            enable_autocmd = false,
+          }
+        }
+      end
+  },
+  "VebbNix/lf-vim",
+  "gpanders/editorconfig.nvim",
+  {
+    "andweeb/presence.nvim",
+    config = function()
+      require"presence":setup { main_image = "file" }
+    end,
+  },
+  { "raghur/vim-ghost", run = ":GhostInstall" },
   {
     "luukvbaal/stabilize.nvim",
     config = function() require"stabilize".setup() end
