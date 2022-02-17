@@ -14,7 +14,7 @@ jobs:
       with:
         submodules: 'recursive'
     - name: Install dotfiles
-      run: ./install
+      run: echo "WIP"
   test-windows:
     runs-on: windows-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
       with:
         submodules: 'recursive'
     - name: Install dotfiles
-      run: .\install-windows.ps1
+      run: echo "WIP"
   dependabot-auto-merge:
     needs: [test-ubuntu, test-windows]
     runs-on: ubuntu-latest
