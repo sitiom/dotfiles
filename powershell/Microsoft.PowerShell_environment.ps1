@@ -1,5 +1,6 @@
 # Environment Variables
 $env:EDITOR = "nvim"
+$env:SHELL = "pwsh -NoLogo"
 $env:PAGER = "bat --paging always"
 $env:VIRTUAL_ENV_DISABLE_PROMPT = $true
 
