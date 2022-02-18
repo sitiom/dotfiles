@@ -2,4 +2,4 @@ hostname: "dotfiles"
 profile: main
 repository:
   type: file
-  path: ~/.local/share/chezmoi/src/VSCodium
+  path: ~/.local/share/chezmoi/VSCodium
