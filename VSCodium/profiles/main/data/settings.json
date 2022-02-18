@@ -14,7 +14,7 @@
     "syncSettings.resources": ["extensions", "keybindings", "settings", "snippets"],
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
-    "workbench.colorTheme": "Dark+ Material",
+    "workbench.colorTheme": "Catppuccin",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.smoothScrolling": true,
     // File type specific configs
