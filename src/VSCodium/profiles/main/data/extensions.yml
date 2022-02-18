@@ -1,0 +1,26 @@
+disabled: []
+enabled:
+  - id: asvetliakov.vscode-neovim
+    uuid: caf8995c-5426-4bf7-9d01-f7968ebd49bb
+  - id: EditorConfig.EditorConfig
+    uuid: f60a60a6-95ba-42d4-b41c-3d24c1b89588
+  - id: emilast.LogFileHighlighter
+    uuid: e8b488af-fccf-4adf-b60c-fc7455bea107
+  - id: esbenp.prettier-vscode
+    uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
+  - id: evzen-wybitul.magic-racket
+    uuid: d8508201-6c73-4091-b44a-f974e541649e
+  - id: eyhn.vscode-vibrancy
+    uuid: d25a53a9-3c49-45b7-8751-ad426ccda154
+  - id: logerfo.sln-support
+    uuid: bbc66c4f-1308-48ae-b1ee-d9169c55279a
+  - id: mark-wiemer.vscode-autohotkey-plus-plus
+    uuid: cf96e3c7-3b07-4403-acc9-2b6299ba7877
+  - id: PKief.material-icon-theme
+    uuid: 5db78037-f674-459f-a236-db622c427c5b
+  - id: shardulm94.trailing-spaces
+    uuid: 6ad45f5a-09ec-44e5-b363-867ddc1ec674
+  - id: vangware.dark-plus-material
+    uuid: c4e31168-d200-4020-ae9e-1aa7b76d2c52
+  - id: znck.grammarly
+    uuid: f2c8b652-2886-45ef-8bc0-c8d1ee8a0e9f
