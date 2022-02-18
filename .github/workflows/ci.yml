@@ -12,17 +12,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: 'recursive'
+        path: ~/.local/share/chezmoi
+    - name: Setup chezmoi
+      run : sudo snap install chezmoi --classic
     - name: Install dotfiles
-      run: echo "WIP"
+      run: chezmoi apply -v
+
   test-windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: 'recursive'
+        path: ~/.local/share/chezmoi
+    - name: Setup chezmoi
+      run : choco install chezmoi
     - name: Install dotfiles
-      run: echo "WIP"
+      run: chezmoi apply -v
+
   dependabot-auto-merge:
     needs: [test-ubuntu, test-windows]
     runs-on: ubuntu-latest
