@@ -1,20 +1,6 @@
-# Dotfiles
+<div align="center">
 
-[![Status](https://github.com/sitiom/dotfiles/workflows/dotfiles/badge.svg?branch=main)](https://github.com/sitiom/dotfiles/actions)
-[![Powered by dotbot][dbshield]][dblink]
+# 🏠 dotfiles [![Status](https://github.com/sitiom/dotfiles/workflows/dotfiles/badge.svg?branch=main)](https://github.com/sitiom/dotfiles/actions)
+\> My dotfiles, powered by [`chezmoi`](https://github.com/twpayne/chezmoi)
+</div>
 
-[dblink]: https://github.com/anishathalye/dotbot
-[dbshield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat
-
-My own dotfiles.
-
-## Installation
-
-- `./install` or `.\install-windows.ps1`
-
-## Removal
-
-- Prerequisites:
-  - Python & PyYAML or
-  - powershell-yaml for PowerShell.
-- Run `uninstall.py` or `uninstall-windows.ps1`.

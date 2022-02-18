@@ -1,0 +1,13 @@
+{{ if ne .chezmoi.os "windows" }}
+AppData/
+Documents/PowerShell/
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.config/
+.p10k.zsh
+.zshenv
+.zshrc
+{{ end }}
+
+VSCodium/

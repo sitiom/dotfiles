@@ -11,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
+    - name: Setup chezmoi
+      run : sudo snap install chezmoi --classic
     - name: Install dotfiles
-      run: ./install
+      run: chezmoi apply -S . -v
+
   test-windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
+    - name: Setup chezmoi
+      run : choco install chezmoi
     - name: Install dotfiles
-      run: .\install-windows.ps1
+      run: chezmoi apply -S . -v
+
   dependabot-auto-merge:
     needs: [test-ubuntu, test-windows]
     runs-on: ubuntu-latest

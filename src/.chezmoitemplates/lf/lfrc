@@ -1,0 +1,11 @@
+# Basic Settings
+set hidden off
+set incsearch on
+set drawbox true
+set icons true
+set info size:time
+set tabstop 4
+
+# Mappings
+map D delete
+map x cut
