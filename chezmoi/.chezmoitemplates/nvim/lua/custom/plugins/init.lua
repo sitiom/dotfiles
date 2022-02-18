@@ -26,7 +26,7 @@ return {
   },
   "tpope/vim-repeat",
   {
-    "blackCauldron7/surround.nvim",
+    "ur4ltz/surround.nvim",
     config = function()
       require"surround".setup{ mappings_style = "surround" }
     end
@@ -118,5 +118,6 @@ return {
     config =function ()
       require"telescope".load_extension("zoxide")
     end
-  }
+  },
+  "alker0/chezmoi.vim"
 }
