@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏠 dotfiles [![Status](https://github.com/sitiom/dotfiles/workflows/dotfiles/badge.svg?branch=main)](https://github.com/sitiom/dotfiles/actions)
+# 🏠 dotfiles [![ci](https://github.com/sitiom/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/sitiom/dotfiles/actions/workflows/ci.yml)
 \> My dotfiles, powered by [`chezmoi`](https://github.com/twpayne/chezmoi)
 </div>
 
