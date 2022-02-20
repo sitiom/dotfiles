@@ -15,7 +15,7 @@ M.ui = {
 M.plugins = {
   status = {
     colorizer = true,
-    dashboard = true,
+    alpha = true,
   },
   options = {
     lspconfig = {
