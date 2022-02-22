@@ -13,6 +13,7 @@ Invoke-Expression (& {
 })
 
 Import-Module posh-git
+Import-Module git-aliases -DisableNameChecking
 oh-my-posh --init --shell pwsh --config "$(scoop prefix oh-my-posh3)\themes\iterm2.omp.json" | Invoke-Expression
 
 Set-PSReadLineOption -PredictionSource History

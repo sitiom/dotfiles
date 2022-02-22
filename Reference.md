@@ -30,5 +30,6 @@
 - PSFzf
 - PSReadLine
 - Terminal-Icons
+- git-aliases
 #### Scripts
 - posh-winfetch
