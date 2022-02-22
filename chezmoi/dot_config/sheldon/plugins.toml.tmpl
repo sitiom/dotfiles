@@ -76,3 +76,10 @@ apply = ["defer"]
 {{ if or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "manjaro") -}}
   {{- template "sheldon/arch.toml" -}}
 {{- end -}}
+
+# Compinit
+# --------
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && compinit'
+
