@@ -73,7 +73,7 @@ apply = ["defer"]
 # Machine specific plugins inserted from chezmoi
 # ----------------
 
-{{ if or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "manjaro") -}}
+{{ if or (eq .chezmoi.osRelease.id "arch" "manjaro") -}}
   {{- template "sheldon/arch.toml" -}}
 {{- end -}}
 
