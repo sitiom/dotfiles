@@ -3,6 +3,10 @@ export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER="bat --paging always"
 
+# Make Sheldon follow XDG standard
+export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
+export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
+
 # Lf Icons
 export LF_ICONS="\
 di=:\

@@ -1,0 +1,6 @@
+[plugins.archlinux]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins"
+use = ["{archlinux}/*.plugin.zsh"]
+apply = ["defer"]
+

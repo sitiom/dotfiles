@@ -3,7 +3,8 @@ AppData/
 Documents/PowerShell/
 {{ end }}
 
-{{ if ne .chezmoi.os "linux" }}
+# Unix stuff here
+{{ if eq .chezmoi.os "windows" }}
 .config/
 .p10k.zsh
 .zshenv
