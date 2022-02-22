@@ -22,6 +22,7 @@
 
 ### Windows
 - oh-my-posh
+- clink
 
 ### PowerShell
 

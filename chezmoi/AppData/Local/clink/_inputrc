@@ -1,0 +1,14 @@
+set colored-stats                 on
+set colored-completion-prefix     on
+
+# Clink only section
+
+$if clink
+
+set editing-mode vi
+
+set search-ignore-case            on
+set completion-auto-query-items   on   # Prompt before showing completions if they'll exceed half the screen.
+
+$endif
+
