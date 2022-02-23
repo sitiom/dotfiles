@@ -67,7 +67,7 @@ return {
       end
    },
    {"VebbNix/lf-vim"},
-   {"gpanders/editorconfig.nvim"},
+   {"editorconfig/editorconfig-vim"},
    {
       "andweeb/presence.nvim",
       config = function()
