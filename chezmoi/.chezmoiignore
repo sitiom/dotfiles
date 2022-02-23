@@ -5,9 +5,11 @@ Documents/PowerShell/
 
 # Unix stuff here
 {{ if eq .chezmoi.os "windows" }}
-.config/
+.config/*
 .p10k.zsh
 .zshenv
 .zshrc
+
+!.config/git/
 {{ end }}
 
