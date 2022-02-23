@@ -3,6 +3,9 @@ export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER="bat --paging always"
 
+# GPG
+export GPG_TTY=$TTY
+
 # Make Sheldon follow XDG standard
 export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
 export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
@@ -169,8 +172,3 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
-
-# WSL-specific variables
-if [[ "$(uname 2> /dev/null)" == "Linux" ]] && grep -iq microsoft /proc/version; then
-    export GPG_TTY=$(tty)
-fi
