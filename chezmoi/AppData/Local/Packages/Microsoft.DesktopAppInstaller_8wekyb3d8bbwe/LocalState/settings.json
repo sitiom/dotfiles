@@ -1,5 +1,13 @@
 {
   "$schema": "https://aka.ms/winget-settings.schema.json",
+  "visual": {
+    "progressBar": "rainbow"
+  },
+  "installBehavior": {
+    "preferences": {
+      "scope": "machine"
+    }
+  },
   "telemetry": {
     "disable": true
   }
