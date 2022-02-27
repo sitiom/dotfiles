@@ -9,7 +9,7 @@ Function passphrasegen { echo "$(password-generator -l 6)-$(password-generator -
 # Initialize zoxide
 Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell) -join "`n"
+    (zoxide init --hook $hook powershell | Out-String)
 })
 
 Import-Module posh-git
