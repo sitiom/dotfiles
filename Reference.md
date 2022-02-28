@@ -31,5 +31,6 @@
 - PSReadLine
 - Terminal-Icons
 - git-aliases
+- scoop-completion
 #### Scripts
 - posh-winfetch
