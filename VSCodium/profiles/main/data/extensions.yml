@@ -2,6 +2,8 @@ disabled: []
 enabled:
   - id: asvetliakov.vscode-neovim
     uuid: caf8995c-5426-4bf7-9d01-f7968ebd49bb
+  - id: bagetx.inf
+    uuid: 056f57eb-8415-4d4c-aeaa-b46157640209
   - id: Catppuccin.catppuccin-vsc
     uuid: 69264e4d-cd3b-468a-8f2b-e69673c7d864
   - id: EditorConfig.EditorConfig
