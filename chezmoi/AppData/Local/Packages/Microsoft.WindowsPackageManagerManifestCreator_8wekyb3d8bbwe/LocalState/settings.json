@@ -1,0 +1,10 @@
+{
+  "$schema": "https://aka.ms/wingetcreate-settings.schema.0.1.json",
+  "Telemetry": {
+    "disable": true
+  },
+  "WindowsPackageManagerRepository": {
+    "owner": "microsoft",
+    "name": "winget-pkgs"
+  }
+}
