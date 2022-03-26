@@ -24,6 +24,11 @@
 - oh-my-posh
 - clink
 
+### Node
+- Commitlint
+- Commitizen
+- cz-git
+
 ### PowerShell
 
 #### Modules
