@@ -6,7 +6,7 @@
 - neofetch
 - zoxide
 - kitty
-- VSCodium
+- VSCode
 - python
 - npm
 - wget
