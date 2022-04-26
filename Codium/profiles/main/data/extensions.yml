@@ -6,6 +6,8 @@ enabled:
     uuid: 056f57eb-8415-4d4c-aeaa-b46157640209
   - id: Catppuccin.catppuccin-vsc
     uuid: 69264e4d-cd3b-468a-8f2b-e69673c7d864
+  - id: cschlosser.doxdocgen
+    uuid: da7e26d5-d57c-4742-ab47-d77fb189e195
   - id: EditorConfig.EditorConfig
     uuid: f60a60a6-95ba-42d4-b41c-3d24c1b89588
   - id: emilast.LogFileHighlighter
@@ -16,16 +18,36 @@ enabled:
     uuid: d8508201-6c73-4091-b44a-f974e541649e
   - id: GitHub.copilot
     uuid: 23c4aeee-f844-43cd-b53e-1113e483f1a6
+  - id: jeff-hykin.better-cpp-syntax
+    uuid: 73767f91-7dcb-43cb-90b3-596d073eea1f
   - id: lkrms.inifmt
     uuid: 0f1eeb9a-eee5-476f-af6d-d27ed0a58e8e
   - id: logerfo.sln-support
     uuid: bbc66c4f-1308-48ae-b1ee-d9169c55279a
   - id: mark-wiemer.vscode-autohotkey-plus-plus
     uuid: cf96e3c7-3b07-4403-acc9-2b6299ba7877
+  - id: ms-vscode-remote.remote-containers
+    uuid: 93ce222b-5f6f-49b7-9ab1-a0463c6238df
+  - id: ms-vscode-remote.remote-ssh
+    uuid: 607fd052-be03-4363-b657-2bd62b83d28a
+  - id: ms-vscode-remote.remote-ssh-edit
+    uuid: bfeaf631-bcff-4908-93ed-fda4ef9a0c5c
+  - id: ms-vscode-remote.remote-wsl
+    uuid: f0c5397b-d357-4197-99f0-cb4202f22818
+  - id: ms-vscode.cmake-tools
+    uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
+  - id: ms-vscode.cpptools
+    uuid: 690b692e-e8a9-493f-b802-8089d50ac1b2
+  - id: ms-vscode.cpptools-extension-pack
+    uuid: 3957b2f6-f086-49b5-a7b4-5da772123130
+  - id: ms-vscode.cpptools-themes
+    uuid: 99b17261-8f6e-45f0-9ad5-a69c6f509a4f
   - id: PKief.material-icon-theme
     uuid: 5db78037-f674-459f-a236-db622c427c5b
   - id: shardulm94.trailing-spaces
     uuid: 6ad45f5a-09ec-44e5-b363-867ddc1ec674
+  - id: twxs.cmake
+    uuid: 2be7cf14-2603-402e-9771-fd79df83cdf8
   - id: walonli.edk2-vscode
     uuid: 5688a9bd-7f8b-4432-a17c-54f20b02bfec
   - id: znck.grammarly
