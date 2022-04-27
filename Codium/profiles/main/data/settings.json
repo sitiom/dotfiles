@@ -1,4 +1,5 @@
 {
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": true,
