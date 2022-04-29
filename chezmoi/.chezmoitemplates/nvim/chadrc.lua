@@ -6,8 +6,9 @@ local userPlugins = require "custom.plugins"
 local cmp = require "cmp"
 
 M.options = {
-  clipboard = "",
-  relativenumber = true
+  user = function()
+      vim.opt.clipboard = ""
+  end
 }
 
 M.ui = {
@@ -16,17 +17,13 @@ M.ui = {
 }
 
 M.plugins = {
-  status = {
-    colorizer = true,
-    alpha = true,
-  },
   options = {
     lspconfig = {
       setup_lspconf = "custom.plugins.configs.lspconfig"
     }
   },
-  default_plugin_config_replace = {
-    nvim_comment = {
+  override = {
+    ["numToStr/Comment.nvim"] = {
       pre_hook = function(ctx)
         local U = require 'Comment.utils'
 
@@ -43,7 +40,7 @@ M.plugins = {
         }
       end
     },
-    nvim_cmp = {
+    ["hrsh7th/nvim-cmp"] = {
       formatting = {
         format = function(entry, vim_item)
           local icons = require "plugins.configs.lspkind_icons"
@@ -74,7 +71,7 @@ M.plugins = {
         ghost_text = true,
       },
     },
-    nvim_tree = {
+    ["kyazdani42/nvim-tree.lua"] = {
       view = {
         hide_root_folder = false,
       },
@@ -82,13 +79,13 @@ M.plugins = {
         enable = true,
       },
     },
-    nvim_treesitter = {
+    ["nvim-treesitter/nvim-treesitter"] = {
       rainbow = {
         enable = true
       },
     },
   },
-  install = userPlugins,
+  user = userPlugins,
 }
 
 return M
