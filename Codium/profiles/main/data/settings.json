@@ -1,5 +1,6 @@
 {
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.intelliSenseEngine": "Disabled",
     "cmake.configureOnOpen": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "smooth",

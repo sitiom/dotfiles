@@ -22,6 +22,8 @@ enabled:
     uuid: 73767f91-7dcb-43cb-90b3-596d073eea1f
   - id: lkrms.inifmt
     uuid: 0f1eeb9a-eee5-476f-af6d-d27ed0a58e8e
+  - id: llvm-vs-code-extensions.vscode-clangd
+    uuid: 103154cb-b81d-4e1b-8281-c5f4fa563d37
   - id: logerfo.sln-support
     uuid: bbc66c4f-1308-48ae-b1ee-d9169c55279a
   - id: mark-wiemer.vscode-autohotkey-plus-plus
