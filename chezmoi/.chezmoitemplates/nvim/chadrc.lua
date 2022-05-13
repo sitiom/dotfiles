@@ -80,6 +80,9 @@ M.plugins = {
       },
     },
     ["nvim-treesitter/nvim-treesitter"] = {
+      highlight = {
+        enable = (not vim.g.vscode),
+      },
       rainbow = {
         enable = true
       },
