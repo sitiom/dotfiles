@@ -88,5 +88,7 @@ M.plugins = {
   user = userPlugins,
 }
 
+M.mappings = require "custom.mappings"
+
 return M
 

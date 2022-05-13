@@ -14,15 +14,11 @@ return {
          require"neoscroll".setup()
       end,
       setup = function()
-         require"core.utils".packer_lazy_load "neoscroll.nvim"
+         nvchad.packer_lazy_load "neoscroll.nvim"
       end,
    },
    ["tpope/vim-sleuth"] = {},
-   ['kevinhwang91/nvim-hlslens'] = {
-      config = function()
-         require"custom.plugins.configs.nvim-hlslens".setup()
-      end
-   },
+   ['kevinhwang91/nvim-hlslens'] = {},
    ["folke/todo-comments.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
       config = function()
@@ -77,7 +73,6 @@ return {
    ["luukvbaal/stabilize.nvim"] = {
       config = function() require"stabilize".setup() end
    },
-   ["williamboman/nvim-lsp-installer"] = {},
    ["j-hui/fidget.nvim"] = {
       config = function()
          require"fidget".setup {
