@@ -68,7 +68,7 @@ M.plugins = {
         { name = "path" },
       },
       experimental = {
-        ghost_text = true,
+        ghost_text = (not vim.g.vscode),
       },
     },
     ["kyazdani42/nvim-tree.lua"] = {
