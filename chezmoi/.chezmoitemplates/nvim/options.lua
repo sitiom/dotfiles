@@ -7,3 +7,5 @@ local listchars = {
   'trail:•',
 }
 vim.o.listchars = table.concat(listchars, ',')
+
+vim.opt.clipboard = ""

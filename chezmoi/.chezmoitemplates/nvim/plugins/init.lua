@@ -13,9 +13,6 @@ return {
       config = function()
          require"neoscroll".setup()
       end,
-      setup = function()
-         nvchad.packer_lazy_load "neoscroll.nvim"
-      end,
    },
    ["tpope/vim-sleuth"] = {},
    ['kevinhwang91/nvim-hlslens'] = {},
@@ -51,17 +48,6 @@ return {
          require"scrollbar.handlers.search".setup()
       end
    },
-   ["JoosepAlviste/nvim-ts-context-commentstring"] = {
-      after = "nvim-treesitter",
-      config = function()
-         require'nvim-treesitter.configs'.setup {
-            context_commentstring = {
-               enable = true,
-               enable_autocmd = false,
-            }
-         }
-      end
-   },
    ["VebbNix/lf-vim"] = {},
    ["editorconfig/editorconfig-vim"] = {},
    ["andweeb/presence.nvim"] = {
@@ -82,13 +68,14 @@ return {
          }
       end,
    },
-   ["gelfand/copilot.vim"] = {
-      config = function()
-         -- Copilot assume mapped
-         vim.g.copilot_assume_mapped = true
-         vim.g.copilot_no_tab_map = true
-      end,
-   },
+   -- ["gelfand/copilot.vim"] = {
+   --    config = function()
+   --       -- Copilot assume mapped
+   --       vim.g.copilot_assume_mapped = true
+   --       vim.g.copilot_no_tab_map = true
+   --    end,
+   -- },
+   -- ["hrsh7th/cmp-copilot"] = {},
    ["jose-elias-alvarez/null-ls.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
       after = "nvim-lspconfig",
@@ -96,7 +83,6 @@ return {
          require"custom.plugins.configs.null-ls".setup()
       end
    },
-   ["hrsh7th/cmp-copilot"] = {},
    ["p00f/nvim-ts-rainbow"] = {
       after = "nvim-treesitter"
    },
