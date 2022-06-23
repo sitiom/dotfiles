@@ -50,7 +50,9 @@
     },
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
+        "yaml": false,
+        "plaintext": true,
         "markdown": false
-    }
+    },
+    "Lua.telemetry.enable": false
 }
