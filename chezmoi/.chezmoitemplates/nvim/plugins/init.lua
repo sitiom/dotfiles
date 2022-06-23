@@ -1,3 +1,5 @@
+local not_in_vscode = function() return not vim.g.vscode end
+
 return {
    -- Extra builtin plugins
    ["goolord/alpha-nvim"] = {
@@ -15,7 +17,9 @@ return {
       end,
    },
    ["tpope/vim-sleuth"] = {},
-   ['kevinhwang91/nvim-hlslens'] = {},
+   ['kevinhwang91/nvim-hlslens'] = {
+      cond = not_in_vscode,
+   },
    ["folke/todo-comments.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
       config = function()
@@ -46,7 +50,8 @@ return {
       config = function()
          require"scrollbar".setup()
          require"scrollbar.handlers.search".setup()
-      end
+      end,
+      cond = not_in_vscode,
    },
    ["VebbNix/lf-vim"] = {},
    ["editorconfig/editorconfig-vim"] = {},
@@ -68,14 +73,6 @@ return {
          }
       end,
    },
-   -- ["gelfand/copilot.vim"] = {
-   --    config = function()
-   --       -- Copilot assume mapped
-   --       vim.g.copilot_assume_mapped = true
-   --       vim.g.copilot_no_tab_map = true
-   --    end,
-   -- },
-   -- ["hrsh7th/cmp-copilot"] = {},
    ["jose-elias-alvarez/null-ls.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
       after = "nvim-lspconfig",

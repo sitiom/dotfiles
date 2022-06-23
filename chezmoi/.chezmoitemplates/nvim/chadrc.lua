@@ -4,7 +4,6 @@ local userPlugins = require "custom.plugins"
 
 M.options = {
   user = function()
-      require'custom.shell'
       require'custom.options'
   end
 }
