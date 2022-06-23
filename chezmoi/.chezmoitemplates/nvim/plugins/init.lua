@@ -1,6 +1,10 @@
 local not_in_vscode = function() return not vim.g.vscode end
 
 return {
+   -- Core plugins
+   ["nvim-treesitter/nvim-treesitter"] = {
+      cond = not_in_vscode,
+   },
    -- Extra builtin plugins
    ["goolord/alpha-nvim"] = {
       disable = false,
@@ -81,7 +85,8 @@ return {
       end
    },
    ["p00f/nvim-ts-rainbow"] = {
-      after = "nvim-treesitter"
+      after = "nvim-treesitter",
+      cond = not_in_vscode,
    },
    ["jvgrootveld/telescope-zoxide"] = {
       after = "telescope.nvim",
