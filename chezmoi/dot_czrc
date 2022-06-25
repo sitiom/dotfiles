@@ -1,1 +1,4 @@
-{ "path": "cz-git" }
+{
+  "path": "cz-git",
+  "markBreakingChangeMode": true
+}
