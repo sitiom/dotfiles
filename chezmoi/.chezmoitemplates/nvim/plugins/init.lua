@@ -64,7 +64,6 @@ return {
          require"presence":setup { main_image = "file" }
       end,
    },
-   ["raghur/vim-ghost"] = { run = ":GhostInstall" },
    ["luukvbaal/stabilize.nvim"] = {
       config = function() require"stabilize".setup() end
    },
