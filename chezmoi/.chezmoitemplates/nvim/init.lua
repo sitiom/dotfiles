@@ -8,4 +8,4 @@
                                                   
 ]]
 
-require'custom.autocmds'
+require "custom.autocmds"
