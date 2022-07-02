@@ -31,9 +31,9 @@ return {
       end
    },
    ["tpope/vim-repeat"] = {},
-   ["ur4ltz/surround.nvim"] = {
+   ["kylechui/nvim-surround"] = {
       config = function()
-         require"surround".setup{ mappings_style = "surround" }
+         require"nvim-surround".setup{}
       end
    },
    ["tpope/vim-unimpaired"] = {},
