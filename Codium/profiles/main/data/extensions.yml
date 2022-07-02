@@ -24,6 +24,8 @@ enabled:
     uuid: 23c4aeee-f844-43cd-b53e-1113e483f1a6
   - id: jeff-hykin.better-cpp-syntax
     uuid: 73767f91-7dcb-43cb-90b3-596d073eea1f
+  - id: JohnnyMorganz.stylua
+    uuid: 6f48cf48-3912-4acc-8119-94a96a062cc1
   - id: josetr.cmake-language-support-vscode
     uuid: dce141da-393b-4514-9f89-18dc85ccc626
   - id: LeonardSSH.vscord

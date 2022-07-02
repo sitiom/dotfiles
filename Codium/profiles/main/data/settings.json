@@ -1,6 +1,7 @@
 {
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "C_Cpp.intelliSenseEngine": "Disabled",
+    "Lua.telemetry.enable": false,
     "cmake.configureOnOpen": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "smooth",
@@ -15,6 +16,7 @@
     "editor.smoothScrolling": true,
     "editor.wordWrap": "on",
     "security.workspace.trust.enabled": false,
+    "stylua.styluaPath": null,
     "syncSettings.resources": ["extensions", "keybindings", "settings", "snippets"],
     "telemetry.telemetryLevel": "off",
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
@@ -45,6 +47,9 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -53,6 +58,5 @@
         "yaml": false,
         "plaintext": true,
         "markdown": false
-    },
-    "Lua.telemetry.enable": false
+    }
 }
