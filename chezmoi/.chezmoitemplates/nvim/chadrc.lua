@@ -29,6 +29,7 @@ M.plugins = {
          },
       },
       ["nvim-treesitter/nvim-treesitter"] = {
+         ensure_installed = "all",
          rainbow = {
             enable = true,
          },
