@@ -15,7 +15,11 @@ return {
       disable = false,
    },
    -- User plugins
-   ["sitiom/nvim-numbertoggle"] = {},
+   ["sitiom/nvim-numbertoggle"] = {
+      config = function()
+         require("numbertoggle").setup()
+      end,
+   },
    ["karb94/neoscroll.nvim"] = {
       opt = true,
       config = function()
