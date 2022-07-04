@@ -15,7 +15,7 @@ return {
       disable = false,
    },
    -- User plugins
-   ["jeffkreeftmeijer/vim-numbertoggle"] = {},
+   ["sitiom/nvim-numbertoggle"] = {},
    ["karb94/neoscroll.nvim"] = {
       opt = true,
       config = function()
