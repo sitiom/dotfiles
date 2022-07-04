@@ -68,7 +68,7 @@ return {
       cond = not_in_vscode,
    },
    ["VebbNix/lf-vim"] = {},
-   ["editorconfig/editorconfig-vim"] = {},
+   ["gpanders/editorconfig.nvim"] = {},
    ["andweeb/presence.nvim"] = {
       config = function()
          require("presence"):setup { main_image = "file" }
