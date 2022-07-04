@@ -26,7 +26,11 @@ return {
          require("neoscroll").setup()
       end,
    },
-   ["tpope/vim-sleuth"] = {},
+   ["NMAC427/guess-indent.nvim"] = {
+      config = function()
+         require("guess-indent").setup {}
+      end,
+   },
    ["kevinhwang91/nvim-hlslens"] = {
       cond = not_in_vscode,
    },
