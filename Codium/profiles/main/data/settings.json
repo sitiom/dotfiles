@@ -15,6 +15,8 @@
     "editor.semanticHighlighting.enabled": true,
     "editor.smoothScrolling": true,
     "editor.wordWrap": "on",
+    "git.autofetch": true,
+    "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
     "stylua.styluaPath": null,
     "syncSettings.resources": ["extensions", "keybindings", "settings", "snippets"],
@@ -58,5 +60,5 @@
         "yaml": false,
         "plaintext": true,
         "markdown": false
-    }
+    },
 }

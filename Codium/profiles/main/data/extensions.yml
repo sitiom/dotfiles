@@ -28,6 +28,8 @@ enabled:
     uuid: 6f48cf48-3912-4acc-8119-94a96a062cc1
   - id: josetr.cmake-language-support-vscode
     uuid: dce141da-393b-4514-9f89-18dc85ccc626
+  - id: Kampfkarren.selene-vscode
+    uuid: 84087f0c-5e3a-4023-bc8a-528523c36b80
   - id: LeonardSSH.vscord
     uuid: 20675c06-f272-4cc8-8611-83ebb5583c5a
   - id: llvm-vs-code-extensions.vscode-clangd
