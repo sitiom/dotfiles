@@ -4,26 +4,27 @@ end
 
 return {
    -- Core plugins
+   ["lukas-reineke/indent-blankline.nvim"] = {
+      cond = not_in_vscode,
+   },
+   ["NvChad/nvim-colorizer.lua"] = {
+      cond = not_in_vscode,
+   },
    ["nvim-treesitter/nvim-treesitter"] = {
+      cond = not_in_vscode,
+   },
+   ["nvim-telescope/telescope.nvim"] = {
       cond = not_in_vscode,
    },
    -- Extra builtin plugins
    ["goolord/alpha-nvim"] = {
       disable = false,
-   },
-   ["NvChad/nvim-colorizer.lua"] = {
-      disable = false,
+      cond = not_in_vscode,
    },
    -- User plugins
    ["sitiom/nvim-numbertoggle"] = {
       config = function()
          require("numbertoggle").setup()
-      end,
-   },
-   ["karb94/neoscroll.nvim"] = {
-      opt = true,
-      config = function()
-         require("neoscroll").setup()
       end,
    },
    ["NMAC427/guess-indent.nvim"] = {
@@ -32,12 +33,10 @@ return {
       end,
    },
    ["kevinhwang91/nvim-hlslens"] = {
+      after = "nvim-scrollbar",
       cond = not_in_vscode,
-   },
-   ["folke/todo-comments.nvim"] = {
-      requires = "nvim-lua/plenary.nvim",
       config = function()
-         require("todo-comments").setup()
+         require("scrollbar.handlers.search").setup()
       end,
    },
    ["tpope/vim-repeat"] = {},
@@ -53,22 +52,25 @@ return {
          require("range-highlight").setup {}
       end,
    },
-   ["yamatsum/nvim-cursorline"] = {},
+   ["yamatsum/nvim-cursorline"] = {
+      cond = not_in_vscode,
+   },
    ["lambdalisue/suda.vim"] = {
       config = function()
          vim.g.suda_smart_edit = 1
       end,
+      cond = not_in_vscode,
    },
    ["petertriho/nvim-scrollbar"] = {
-      after = "nvim-hlslens",
       config = function()
          require("scrollbar").setup()
-         require("scrollbar.handlers.search").setup()
       end,
       cond = not_in_vscode,
    },
    ["VebbNix/lf-vim"] = {},
-   ["gpanders/editorconfig.nvim"] = {},
+   ["gpanders/editorconfig.nvim"] = {
+      cond = not_in_vscode,
+   },
    ["andweeb/presence.nvim"] = {
       config = function()
          require("presence"):setup { main_image = "file" }
@@ -78,6 +80,7 @@ return {
       config = function()
          require("stabilize").setup()
       end,
+      cond = not_in_vscode,
    },
    ["j-hui/fidget.nvim"] = {
       config = function()
@@ -87,6 +90,7 @@ return {
             },
          }
       end,
+      cond = not_in_vscode,
    },
    ["jose-elias-alvarez/null-ls.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
@@ -94,17 +98,11 @@ return {
       config = function()
          require("custom.plugins.configs.null-ls").setup()
       end,
+      cond = not_in_vscode,
    },
    ["p00f/nvim-ts-rainbow"] = {
       after = "nvim-treesitter",
       cond = not_in_vscode,
-   },
-   ["jvgrootveld/telescope-zoxide"] = {
-      after = "telescope.nvim",
-      requires = "nvim-lua/popup.nvim",
-      config = function()
-         require("telescope").load_extension "zoxide"
-      end,
    },
    ["alker0/chezmoi.vim"] = {},
 }

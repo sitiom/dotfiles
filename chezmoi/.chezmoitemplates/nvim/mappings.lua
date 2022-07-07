@@ -6,12 +6,6 @@ M.bufferline = {
    },
 }
 
-M.telescope = {
-   n = {
-      ["<leader>fz"] = { "<cmd> Telescope zoxide list<CR>", "Open zoxide" },
-   },
-}
-
 M.hlslens = {
    n = {
       ["n"] = { "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>", "" },
