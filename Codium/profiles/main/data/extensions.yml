@@ -1,5 +1,7 @@
 disabled: []
 enabled:
+  - id: arahata.linter-actionlint
+    uuid: 2c0c2aa2-f17b-44fb-9d17-fad625434e81
   - id: asvetliakov.vscode-neovim
     uuid: caf8995c-5426-4bf7-9d01-f7968ebd49bb
   - id: bagetx.inf
@@ -20,6 +22,8 @@ enabled:
     uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
   - id: evzen-wybitul.magic-racket
     uuid: d8508201-6c73-4091-b44a-f974e541649e
+  - id: fnando.linter
+    uuid: b68a062b-e10e-4690-b8d8-ba174fe2d1a2
   - id: GitHub.copilot
     uuid: 23c4aeee-f844-43cd-b53e-1113e483f1a6
   - id: jeff-hykin.better-cpp-syntax
