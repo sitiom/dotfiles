@@ -64,6 +64,8 @@ enabled:
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
   - id: ms-vscode.powershell
     uuid: 40d39ce9-c381-47a0-80c8-a6661f731eab
+  - id: naumovs.color-highlight
+    uuid: 121396ad-85a1-45ec-9fd1-d95028a847f5
   - id: ngyuki.ghosttext
     uuid: dea78f0b-447b-4e23-9eff-9a49373b49c3
   - id: PKief.material-icon-theme
