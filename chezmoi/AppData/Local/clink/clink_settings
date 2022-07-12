@@ -66,3 +66,4 @@ history.max_lines = 10000
 # type: boolean
 history.shared = True
 
+prompt.transient = always
