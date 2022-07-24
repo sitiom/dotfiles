@@ -33,11 +33,7 @@ return {
       end,
    },
    ["kevinhwang91/nvim-hlslens"] = {
-      after = "nvim-scrollbar",
       cond = not_in_vscode,
-      config = function()
-         require("scrollbar.handlers.search").setup()
-      end,
    },
    ["tpope/vim-repeat"] = {},
    ["kylechui/nvim-surround"] = {
@@ -62,10 +58,11 @@ return {
       cond = not_in_vscode,
    },
    ["petertriho/nvim-scrollbar"] = {
+      after = "nvim-hlslens",
       config = function()
          require("scrollbar").setup()
+         require("scrollbar.handlers.search").setup()
       end,
-      cond = not_in_vscode,
    },
    ["VebbNix/lf-vim"] = {},
    ["gpanders/editorconfig.nvim"] = {
