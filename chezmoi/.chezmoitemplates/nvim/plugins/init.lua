@@ -16,6 +16,12 @@ return {
    ["nvim-telescope/telescope.nvim"] = {
       cond = not_in_vscode,
    },
+   ["neovim/nvim-lspconfig"] = {
+      config = function()
+         require "plugins.configs.lspconfig"
+         require "custom.plugins.configs.lspconfig"
+      end,
+   },
    -- Extra builtin plugins
    ["goolord/alpha-nvim"] = {
       disable = false,

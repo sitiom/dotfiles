@@ -2,23 +2,12 @@ local M = {}
 
 local userPlugins = require "custom.plugins"
 
-M.options = {
-   user = function()
-      require "custom.options"
-   end,
-}
-
 M.ui = {
    theme = "catppuccin",
    transparency = true,
 }
 
 M.plugins = {
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.configs.lspconfig",
-      },
-   },
    override = {
       ["kyazdani42/nvim-tree.lua"] = {
          view = {
