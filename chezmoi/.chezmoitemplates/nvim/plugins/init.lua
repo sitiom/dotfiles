@@ -31,6 +31,23 @@ return {
     end,
   },
   ["gpanders/editorconfig.nvim"] = {},
+  -- Only used for authenticating with copilot. See https://github.com/zbirenbaum/copilot.lua#important-usage
+  ["github/copilot.vim"] = {
+    opt = true,
+  },
+  ["zbirenbaum/copilot.lua"] = {
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        astronvim.add_user_cmp_source "copilot"
+        require("copilot").setup()
+      end, 100)
+    end,
+  },
+  ["zbirenbaum/copilot-cmp"] = {
+    after = "copilot.lua",
+    module = "copilot_cmp",
+  },
   ["andweeb/presence.nvim"] = {
     config = function()
       require("presence"):setup { main_image = "file" }
