@@ -1,5 +1,5 @@
 return {
   "clangd",
   "cmake",
-  "sumneko_lua"
+  "sumneko_lua",
 }
