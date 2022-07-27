@@ -5,6 +5,8 @@ M.g = {
 }
 
 M.opt = {
+  relativenumber = true,
+  guifont = "Delugia:h10",
   list = true,
   listchars = {
     tab = "→ ",
@@ -16,10 +18,7 @@ M.opt = {
   },
 }
 
-M.o = {
-    relativenumber = true,
-    guifont = "Delugia Nerd Font:h10",
-}
+M.o = {}
 
 -- Use PowerShell in Windows
 if vim.fn.has "win32" == 1 then
