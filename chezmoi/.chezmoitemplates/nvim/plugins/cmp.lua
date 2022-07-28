@@ -1,5 +1,3 @@
-local lspkind = require "lspkind"
-
 return {
   experimental = {
     ghost_text = true,
@@ -11,10 +9,10 @@ return {
         vim_item.kind_hl_group = "CmpItemKindCopilot"
         return vim_item
       end
-      return lspkind.cmp_format { with_text = false, maxwidth = 50 }(entry, vim_item)
+      return require("lspkind").cmp_format { with_text = false, maxwidth = 50 }(entry, vim_item)
     end,
   },
   source_priority = {
-    copilot = 1500,
+    copilot = 5000,
   },
 }
