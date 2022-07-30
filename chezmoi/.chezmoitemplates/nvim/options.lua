@@ -7,6 +7,7 @@ M.g = {
 M.opt = {
   relativenumber = true,
   guifont = "Delugia:h10",
+  clipboard = "",
   list = true,
   listchars = {
     tab = "→ ",
