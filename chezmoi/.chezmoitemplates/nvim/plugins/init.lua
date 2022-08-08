@@ -8,6 +8,7 @@ return {
   },
   -- Vimscript plugins
   ["tpope/vim-repeat"] = {},
+  ["tpope/vim-unimpaired"] = {},
   ["camnw/lf-vim"] = {},
   ["alker0/chezmoi.vim"] = {},
   -- Lua plugins
