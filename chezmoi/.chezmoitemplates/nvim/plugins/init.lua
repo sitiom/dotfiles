@@ -49,7 +49,6 @@ return {
     after = "copilot.lua",
     module = "copilot_cmp",
   },
-  ["onsails/lspkind.nvim"] = {},
   ["andweeb/presence.nvim"] = {
     config = function()
       require("presence"):setup { main_image = "file" }
