@@ -2,12 +2,11 @@
 #Include %A_ScriptDir%\komorebic.lib.ahk ; Generate with 'komorebic ahk-library'
 #Include %A_ScriptDir%\komorebi.generated.ahk ; Application configuration rules. Generated with 'komorebic ahk-app-specific-configuration'
 
-;
 ; Variables
 ; 
 
-workspaceNumber := 9
-monitorNumber := 2
+workspaceCount := 9
+SysGet, monitorCount, MonitorCount
 
 ;
 ; Options
@@ -17,10 +16,10 @@ WatchConfiguration("enable")
 FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
 
-Loop, %monitorNumber% {
+Loop, %monitorCount% {
   monitorIndex := A_Index - 1
-  EnsureWorkspaces(monitorIndex, workspaceNumber)
-  Loop, %workspaceNumber% {
+  EnsureWorkspaces(monitorIndex, workspaceCount)
+  Loop, %workspaceCount% {
     workspaceIndex := A_Index - 1
     ContainerPadding(monitorIndex, workspaceIndex, 2)
     WorkspacePadding(monitorIndex, workspaceIndex, 2)
@@ -31,7 +30,7 @@ Loop, %monitorNumber% {
 ; Keybindings
 ;
 
-Loop, %workspaceNumber% {
+Loop, %workspaceCount% {
   focusWorkspace := Func("FocusWorkspace").Bind(A_Index-1)
   moveToWorkspace := Func("MoveToWorkspace").Bind(A_Index-1)
 
