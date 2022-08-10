@@ -5,7 +5,7 @@
 ; Variables
 ; 
 
-workspaceCount := 9
+workspaceCount := 6
 SysGet, monitorCount, MonitorCount
 
 ;
