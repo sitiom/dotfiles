@@ -23,8 +23,8 @@ Loop, %monitorCount% {
   EnsureWorkspaces(monitorIndex, workspaceCount)
   Loop, %workspaceCount% {
     workspaceIndex := A_Index - 1
-    ContainerPadding(monitorIndex, workspaceIndex, 2)
-    WorkspacePadding(monitorIndex, workspaceIndex, 2)
+    ContainerPadding(monitorIndex, workspaceIndex, 3)
+    WorkspacePadding(monitorIndex, workspaceIndex, 3)
   }
 }
 
