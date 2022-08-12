@@ -15,6 +15,8 @@ SysGet, monitorCount, MonitorCount
 WatchConfiguration("enable")
 FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
+ActiveWindowBorder("enable")
+ActiveWindowBorderColour(250, 179, 135) ; Catppuccin Mocha Peach
 
 Loop, %monitorCount% {
   monitorIndex := A_Index - 1
@@ -25,6 +27,8 @@ Loop, %monitorCount% {
     WorkspacePadding(monitorIndex, workspaceIndex, 2)
   }
 }
+
+CompleteConfiguration()
 
 ;
 ; Keybindings
