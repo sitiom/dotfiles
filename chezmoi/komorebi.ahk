@@ -16,7 +16,7 @@ WatchConfiguration("enable")
 FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
 ActiveWindowBorder("enable")
-ActiveWindowBorderColour(250, 179, 135) ; Catppuccin Mocha Peach
+ActiveWindowBorderColour(250, 179, 135, "single") ; Catppuccin Mocha Peach
 
 Loop, %monitorCount% {
   monitorIndex := A_Index - 1
