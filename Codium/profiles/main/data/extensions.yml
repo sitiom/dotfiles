@@ -6,8 +6,6 @@ enabled:
     uuid: caf8995c-5426-4bf7-9d01-f7968ebd49bb
   - id: bagetx.inf
     uuid: 056f57eb-8415-4d4c-aeaa-b46157640209
-  - id: bungcip.better-toml
-    uuid: 464f4ac7-af65-4aa9-9907-4ba7fa419085
   - id: Catppuccin.catppuccin-vsc
     uuid: 69264e4d-cd3b-468a-8f2b-e69673c7d864
   - id: cschlosser.doxdocgen
@@ -76,12 +74,14 @@ enabled:
     uuid: 6ad45f5a-09ec-44e5-b363-867ddc1ec674
   - id: sumneko.lua
     uuid: 3a15b5a7-be12-47e3-8445-88ee3eabc8b2
+  - id: tamasfe.even-better-toml
+    uuid: b2215d5f-675e-4a2b-b6ac-1ca737518b78
   - id: twxs.cmake
     uuid: 2be7cf14-2603-402e-9771-fd79df83cdf8
   - id: usernamehw.errorlens
     uuid: 9d8c32ab-354c-4daf-a9bf-20b633734435
   - id: vadimcn.vscode-lldb
-    uuid: bee31e34-a44b-4a76-9ec2-e9fd1439a0f6
+    uuid: null
   - id: walonli.edk2-vscode
     uuid: 5688a9bd-7f8b-4432-a17c-54f20b02bfec
   - id: znck.grammarly

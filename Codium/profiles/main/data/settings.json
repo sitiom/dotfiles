@@ -25,7 +25,7 @@
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
     "workbench.list.automaticKeyboardNavigation": false,
-    "workbench.colorTheme": "Catppuccin",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.smoothScrolling": true,
     // File type specific configs
