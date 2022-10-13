@@ -6,10 +6,6 @@ export PAGER="bat --paging always"
 # GPG
 export GPG_TTY=$TTY
 
-# Make Sheldon follow XDG standard
-export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
-export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
-
 # Lf Icons
 export LF_ICONS="\
 di=:\
