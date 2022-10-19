@@ -1,0 +1,13 @@
+[
+    {
+        "alang": ["jpn", "ja"],
+        "slang": ["enm", "eng?"],
+        "blacklist": [ "sign" ],
+        "whitelist": [ "dialogue" ]
+    },
+    {
+        "alang": ["jpn", "ja" ],
+        "slang": ["enm", "eng?"],
+        "blacklist": [ "sign" ]
+    }
+]
