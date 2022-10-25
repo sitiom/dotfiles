@@ -3,7 +3,7 @@
         "alang": ["jpn", "ja"],
         "slang": ["enm", "eng?"],
         "blacklist": [ "sign" ],
-        "whitelist": [ "dialogue" ]
+        "whitelist": [ "dialog" ]
     },
     {
         "alang": ["jpn", "ja" ],
