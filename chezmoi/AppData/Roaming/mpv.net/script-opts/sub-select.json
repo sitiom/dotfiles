@@ -3,7 +3,20 @@
         "alang": ["jpn", "ja"],
         "slang": ["enm", "eng?"],
         "blacklist": [ "sign" ],
+        "whitelist": [ "dialog" ],
+        "condition": "sub.codec == 'ass'"
+    },
+    {
+        "alang": ["jpn", "ja"],
+        "slang": ["enm", "eng?"],
+        "blacklist": [ "sign" ],
         "whitelist": [ "dialog" ]
+    },
+    {
+        "alang": ["jpn", "ja" ],
+        "slang": ["enm", "eng?"],
+        "blacklist": [ "sign" ],
+        "condition": "sub.codec == 'ass'"
     },
     {
         "alang": ["jpn", "ja" ],
