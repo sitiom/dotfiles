@@ -17,6 +17,7 @@ FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
 ActiveWindowBorder("enable")
 ActiveWindowBorderColour(250, 179, 135, "single") ; Catppuccin Mocha Peach
+CrossMonitorMoveBehaviour("insert")
 
 Loop, %monitorCount% {
   monitorIndex := A_Index - 1
@@ -55,6 +56,24 @@ Loop, %workspaceCount% {
 !+j:: Move("down")
 !+k:: Move("up")
 !+l:: Move("right")
+
+; Resize the focused window in a given direction, Ctrl + Win + Alt + Vim direction keys
+^#!h::
+Resize("left", "increase")
+Resize("right", "decrease")
+return
+^#!j::
+Resize("down", "increase")
+Resize("up", "decrease")
+return
+^#!k::
+Resize("up", "increase")
+Resize("down", "decrease")
+return
+^#!l::
+Resize("right", "increase")
+Resize("left", "decrease")
+return
 
 ; Stack the focused window in a given direction, Alt + Shift + direction keys
 !+Left:: Stack("left")
