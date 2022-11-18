@@ -6,10 +6,12 @@ local settings = {
   --if "no" then you can display the playlist by any of the navigation keys
   dynamic_binds = true,
 
+  -- to bind multiple keys separate them by a space
+
   -- main key
   key_showplaylist = "SHIFT+ENTER",
 
-  -- dynamic keys - to bind multiple keys separate them by a space
+  -- dynamic keys
   key_moveup = "UP",
   key_movedown = "DOWN",
   key_movepageup = "PGUP",
@@ -38,7 +40,7 @@ local settings = {
 
   filename_replace = "",
 
---[=====[ START OF SAMPLE REPLACE, to use remove start and end line
+--[=====[ START OF SAMPLE REPLACE - Remove this line to use it
   --Sample replace: replaces underscore to space on all files
   --for mp4 and webm; remove extension, remove brackets and surrounding whitespace, change dot between alphanumeric to space
   filename_replace = [[
@@ -268,6 +270,11 @@ update_opts({filename_replace = true, loadfiles_filetypes = true})
 function on_loaded()
   filename = mp.get_property("filename")
   path = mp.get_property('path')
+  local ext = filename:match("%.(.+)$")
+  if not ext or not filetype_lookup[ext:lower()] then
+    -- a directory or playlist has been loaded, let's not do anything as mpv will expand it into files
+    return
+  end
   --if not a url then join path with working directory
   if not path:match("^%a%a+:%/%/") then
     path = utils.join_path(mp.get_property('working-directory'), path)
@@ -387,13 +394,17 @@ function get_name_from_index(i, notitle)
   end
 
   --if we have media title use a more conservative strip
-  if title and not notitle and should_use_title then return stripfilename(title, true) end
+  if title and not notitle and should_use_title then
+    -- Escape a string for verbatim display on the OSD
+    -- Ref: https://github.com/mpv-player/mpv/blob/94677723624fb84756e65c8f1377956667244bc9/player/lua/stats.lua#L145
+    return stripfilename(title, true):gsub("\\", '\\\239\187\191'):gsub("{", "\\{"):gsub("^ ", "\\h")
+  end
 
   --remove paths if they exist, keeping protocols for stripping
   if string.sub(name, 1, 1) == '/' or name:match("^%a:[/\\]") then
     _, name = utils.split_path(name)
   end
-  return stripfilename(name)
+  return stripfilename(name):gsub("\\", '\\\239\187\191'):gsub("{", "\\{"):gsub("^ ", "\\h")
 end
 
 function parse_header(string)
@@ -450,9 +461,13 @@ end
 function draw_playlist()
   refresh_globals()
   local ass = assdraw.ass_new()
-  ass:pos(settings.text_padding_x, settings.text_padding_y)
   ass:new_event()
   ass:append(settings.style_ass_tags)
+
+  -- TODO: padding should work even on different osd alignments
+  if mp.get_property("osd-align-x") == "left" and mp.get_property("osd-align-y") == "top" then
+    ass:pos(settings.text_padding_x, settings.text_padding_y)
+  end
 
   if settings.playlist_header ~= "" then
     ass:append(parse_header(settings.playlist_header).."\\N")
@@ -536,7 +551,11 @@ function removefile()
   if cursor==pos then mp.command("script-message unseenplaylist mark true \"playlistmanager avoid conflict when removing file\"") end
   mp.commandv("playlist-remove", cursor)
   if cursor==plen-1 then cursor = cursor - 1 end
-  showplaylist()
+  if plen == 1 then
+    remove_keybinds()
+  else
+    showplaylist()
+  end
 end
 
 function moveup()
@@ -936,7 +955,20 @@ function shuffleplaylist()
 end
 
 function bind_keys(keys, name, func, opts)
-  if not keys then
+  if keys == nil or keys == "" then
+    mp.add_key_binding(keys, name, func, opts)
+    return
+  end
+  local i = 1
+  for key in keys:gmatch("[^%s]+") do
+    local prefix = i == 1 and '' or i
+    mp.add_key_binding(key, name..prefix, func, opts)
+    i = i + 1
+  end
+end
+
+function bind_keys_forced(keys, name, func, opts)
+  if keys == nil or keys == "" then
     mp.add_forced_key_binding(keys, name, func, opts)
     return
   end
@@ -949,7 +981,7 @@ function bind_keys(keys, name, func, opts)
 end
 
 function unbind_keys(keys, name)
-  if not keys then
+  if keys == nil or keys == "" then
     mp.remove_key_binding(name)
     return
   end
@@ -962,17 +994,17 @@ function unbind_keys(keys, name)
 end
 
 function add_keybinds()
-  bind_keys(settings.key_moveup, 'moveup', moveup, "repeatable")
-  bind_keys(settings.key_movedown, 'movedown', movedown, "repeatable")
-  bind_keys(settings.key_movepageup, 'movepageup', movepageup, "repeatable")
-  bind_keys(settings.key_movepagedown, 'movepagedown', movepagedown, "repeatable")
-  bind_keys(settings.key_movebegin, 'movebegin', movebegin, "repeatable")
-  bind_keys(settings.key_moveend, 'moveend', moveend, "repeatable")
-  bind_keys(settings.key_selectfile, 'selectfile', selectfile)
-  bind_keys(settings.key_unselectfile, 'unselectfile', unselectfile)
-  bind_keys(settings.key_playfile, 'playfile', playfile)
-  bind_keys(settings.key_removefile, 'removefile', removefile, "repeatable")
-  bind_keys(settings.key_closeplaylist, 'closeplaylist', remove_keybinds)
+  bind_keys_forced(settings.key_moveup, 'moveup', moveup, "repeatable")
+  bind_keys_forced(settings.key_movedown, 'movedown', movedown, "repeatable")
+  bind_keys_forced(settings.key_movepageup, 'movepageup', movepageup, "repeatable")
+  bind_keys_forced(settings.key_movepagedown, 'movepagedown', movepagedown, "repeatable")
+  bind_keys_forced(settings.key_movebegin, 'movebegin', movebegin, "repeatable")
+  bind_keys_forced(settings.key_moveend, 'moveend', moveend, "repeatable")
+  bind_keys_forced(settings.key_selectfile, 'selectfile', selectfile)
+  bind_keys_forced(settings.key_unselectfile, 'unselectfile', unselectfile)
+  bind_keys_forced(settings.key_playfile, 'playfile', playfile)
+  bind_keys_forced(settings.key_removefile, 'removefile', removefile, "repeatable")
+  bind_keys_forced(settings.key_closeplaylist, 'closeplaylist', remove_keybinds)
 end
 
 function remove_keybinds()
@@ -1114,12 +1146,12 @@ end
 
 mp.register_script_message("playlistmanager", handlemessage)
 
-mp.register_event("file-loaded", on_loaded)
-mp.register_event("end-file", on_closed)
+bind_keys(settings.key_sortplaylist, "sortplaylist", sortplaylist)
+bind_keys(settings.key_shuffleplaylist, "shuffleplaylist", shuffleplaylist)
+bind_keys(settings.key_reverseplaylist, "reverseplaylist", reverseplaylist)
+bind_keys(settings.key_loadfiles, "loadfiles", playlist)
+bind_keys(settings.key_saveplaylist, "saveplaylist", activate_playlist_save)
+bind_keys(settings.key_showplaylist, "showplaylist", toggle_playlist)
 
-mp.add_key_binding(settings.key_loadfiles,        "loadfiles",        playlist)
-mp.add_key_binding(settings.key_sortplaylist,     "sortplaylist",     sortplaylist)
-mp.add_key_binding(settings.key_saveplaylist,     "saveplaylist",     activate_playlist_save)
-mp.add_key_binding(settings.key_showplaylist,     "showplaylist",     toggle_playlist)
-mp.add_key_binding(settings.key_shuffleplaylist,  "shuffleplaylist",  shuffleplaylist)
-mp.add_key_binding(settings.key_reverseplaylist,  "reverseplaylist",  reverseplaylist)
+mp.register_event("start-file", on_loaded)
+mp.register_event("end-file", on_closed)
