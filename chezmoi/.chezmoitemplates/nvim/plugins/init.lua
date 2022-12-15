@@ -32,10 +32,6 @@ return {
     end,
   },
   ["gpanders/editorconfig.nvim"] = {},
-  -- Only used for authenticating with copilot. See https://github.com/zbirenbaum/copilot.lua#important-usage
-  ["github/copilot.vim"] = {
-    opt = true,
-  },
   ["zbirenbaum/copilot.lua"] = {
     event = { "VimEnter" },
     config = function()
