@@ -15,8 +15,6 @@ SysGet, monitorCount, MonitorCount
 WatchConfiguration("enable")
 FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
-ActiveWindowBorder("enable")
-ActiveWindowBorderColour(250, 179, 135, "single") ; Catppuccin Mocha Peach
 CrossMonitorMoveBehaviour("insert")
 
 Loop, %monitorCount% {
