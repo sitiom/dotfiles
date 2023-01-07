@@ -12,11 +12,7 @@ return {
   ["camnw/lf-vim"] = {},
   ["alker0/chezmoi.vim"] = {},
   -- Lua plugins
-  ["sitiom/nvim-numbertoggle"] = {
-    config = function()
-      require("numbertoggle").setup()
-    end,
-  },
+  ["sitiom/nvim-numbertoggle"] = {},
   ["kevinhwang91/nvim-hlslens"] = {},
   ["kylechui/nvim-surround"] = {
     config = function()
