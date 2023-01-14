@@ -3,31 +3,23 @@
 - delta
 - fzf
 - lf
-- neofetch
 - zoxide
 - kitty
 - VSCode
 - python
 - npm
-- wget
-
-### Neovim
-- firenvim
-- NvChad
 
 ### Linux
-- zgenom (automatically cloned when not found)
+- sheldon
 - zsh
-- unzip
 
 ### Windows
 - oh-my-posh
 - clink
 
 ### Node
-- Commitlint
-- Commitizen
-- cz-git
+- [czg](https://cz-git.qbb.sh/cli/)
+  - @commitlint/config-conventional
 
 ### PowerShell
 
@@ -37,5 +29,3 @@
 - Terminal-Icons
 - git-aliases
 - scoop-completion
-#### Scripts
-- posh-winfetch
