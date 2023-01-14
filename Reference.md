@@ -5,7 +5,6 @@
 - lf
 - zoxide
 - kitty
-- VSCode
 - python
 - npm
 
