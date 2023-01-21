@@ -2,17 +2,6 @@ local msg = require("mp.msg")
 local opts = require("mp.options")
 local utils = require("mp.utils")
 
-local options = {
-	key = "D",
-	active = true,
-	client_id = "737663962677510245",
-	binary_path = "",
-	socket_path = "/tmp/mpvsocket",
-	use_static_socket_path = true,
-	autohide_threshold = 0,
-}
-opts.read_options(options, "discord")
-
 function detect_platform() --function to detect platform
 	local o = {}
 	if mp.get_property_native('options/vo-mmcss-profile', o) ~= o then
@@ -22,6 +11,17 @@ function detect_platform() --function to detect platform
 	end
 	return "linux"
 end
+
+local options = {
+	key = "D",
+	active = true,
+	client_id = "737663962677510245",
+	binary_path = "",
+	socket_path = (detect_platform() ~= "windows" and "/tmp/" or "" ) .. "mpvsocket",
+	use_static_socket_path = true,
+	autohide_threshold = 0,
+}
+opts.read_options(options, "discord")
 
 if options.binary_path == "" then --sets the binary_path to a default location in mpv config if no location is specified in discord.conf
 	local platform = detect_platform()
@@ -56,8 +56,8 @@ local socket_path = options.socket_path
 if not options.use_static_socket_path then
 	local pid = utils.getpid()
 	local filename = ("mpv-discord-%s"):format(pid)
-	if socket_path == "" then
-		socket_path = "/tmp/" -- default
+	if socket_path == "" and detect_platform() ~= "windows" then
+		socket_path = "/tmp/" -- default on unix systems
 	end
 	socket_path = utils.join_path(socket_path, filename)
 elseif socket_path == "" then
