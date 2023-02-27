@@ -3,11 +3,6 @@
   "visual": {
     "progressBar": "rainbow"
   },
-  "installBehavior": {
-    "preferences": {
-      "scope": "machine"
-    }
-  },
   "telemetry": {
     "disable": true
   }
