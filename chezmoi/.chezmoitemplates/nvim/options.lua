@@ -1,9 +1,5 @@
 local M = {}
 
-M.g = {
-  catppuccin_flavour = "mocha",
-}
-
 M.opt = {
   relativenumber = true,
   guifont = "Delugia:h10",
