@@ -7,4 +7,12 @@ return {
     end,
   },
   { "max397574/better-escape.nvim", enabled = false },
+  {
+    "onsails/lspkind.nvim",
+    opts = {
+      symbol_map = {
+        Copilot = "",
+      },
+    },
+  },
 }
