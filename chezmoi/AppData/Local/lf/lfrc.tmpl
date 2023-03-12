@@ -1,1 +1,9 @@
 {{- template "lf/lfrc" . -}}
+
+# Windows-specific settings
+set shell pwsh
+set shellopts "-NoProfile"
+cmd open &start $Env:f
+map e    $Invoke-Expression "$Env:EDITOR $Env:f"
+map i    $Invoke-Expression "$Env:PAGER $Env:f"
+map w    $&$Env:SHELL

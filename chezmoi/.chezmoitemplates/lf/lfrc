@@ -1,8 +1,8 @@
 # Basic Settings
 set hidden off
-set incsearch on
-set drawbox true
-set icons true
+set incsearch
+set drawbox
+set icons
 set info size:time
 set tabstop 4
 
