@@ -1,12 +1,14 @@
+#Requires AutoHotkey v2.0
 #SingleInstance Force
-#Include %A_ScriptDir%\komorebic.lib.ahk ; Generate with 'komorebic ahk-library'
-#Include %A_ScriptDir%\komorebi.generated.ahk ; Application configuration rules. Generated with 'komorebic ahk-app-specific-configuration'
+#Include komorebic.lib.ahk ; Generate with 'komorebic ahk-library'
+#Include komorebi.generated.ahk ; Application configuration rules. Generated with 'komorebic ahk-app-specific-configuration'
 
+;
 ; Variables
-; 
+;
 
 workspaceCount := 6
-SysGet, monitorCount, MonitorCount
+monitorCount := MonitorGetCount()
 
 ;
 ; Options
@@ -19,10 +21,10 @@ CrossMonitorMoveBehaviour("insert")
 AltFocusHack("enable")
 WindowHidingBehaviour("cloak")
 
-Loop, %monitorCount% {
+Loop monitorCount {
   monitorIndex := A_Index - 1
   EnsureWorkspaces(monitorIndex, workspaceCount)
-  Loop, %workspaceCount% {
+  Loop workspaceCount {
     workspaceIndex := A_Index - 1
     ContainerPadding(monitorIndex, workspaceIndex, 3)
     WorkspacePadding(monitorIndex, workspaceIndex, 3)
@@ -34,16 +36,6 @@ CompleteConfiguration()
 ;
 ; Keybindings
 ;
-
-Loop, %workspaceCount% {
-  focusWorkspace := Func("FocusWorkspace").Bind(A_Index-1)
-  moveToWorkspace := Func("MoveToWorkspace").Bind(A_Index-1)
-
-  ; Switch to workspace,  Alt + 1~9
-  Hotkey, !%A_Index%, % focusWorkspace, On
-  ; Move window to workspace, Alt + Shift + 1~9
-  Hotkey, !+%A_Index%, % moveToWorkspace, On
-}
 
 ; Change the focused window, Alt + Vim direction keys
 !h:: Focus("left")
@@ -58,22 +50,22 @@ Loop, %workspaceCount% {
 !+l:: Move("right")
 
 ; Resize the focused window in a given direction, Ctrl + Win + Alt + Vim direction keys
-^#!h::
-Resize("left", "increase")
-Resize("right", "decrease")
-return
-^#!j::
-Resize("down", "increase")
-Resize("up", "decrease")
-return
-^#!k::
-Resize("up", "increase")
-Resize("down", "decrease")
-return
-^#!l::
-Resize("right", "increase")
-Resize("left", "decrease")
-return
+^#!h:: {
+  Resize("left", "increase")
+  Resize("right", "decrease")
+}
+^#!j:: {
+  Resize("down", "increase")
+  Resize("up", "decrease")
+}
+^#!k:: {
+  Resize("up", "increase")
+  Resize("down", "decrease")
+}
+^#!l::{
+  Resize("right", "increase")
+  Resize("left", "decrease")
+}
 
 ; Stack the focused window in a given direction, Alt + Shift + direction keys
 !+Left:: Stack("left")
@@ -112,9 +104,16 @@ return
 ; Pause responding to any window events or komorebic commands, Alt + P
 !p:: TogglePause()
 
+Loop workspaceCount {
+  ; Switch to workspace,  Alt + 1~9
+  Hotkey "!" A_Index, (key) => FocusWorkspace(Integer(SubStr(key, 2)) - 1) , "On"
+  ; Move window to workspace, Alt + Shift + 1~9
+  Hotkey "!+" A_Index, (key) => MoveToWorkspace(Integer(SubStr(key, 3)) - 1) , "On"
+}
+
 ;
 ; Non-komorebi keybindings
 ;
 
 ; Close application; Alt + Q
-!q:: WinClose, A
+!q:: WinClose "A"
