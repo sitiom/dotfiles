@@ -19,10 +19,11 @@ return {
     config = function() require("nvim-surround").setup {} end,
   },
   {
-    "andweeb/presence.nvim",
+    "neoclide/coc.nvim",
+    branch = "release",
     event = "VeryLazy",
-    opts = {
-      main_image = "file",
-    },
+    init = function()
+      vim.g.coc_global_extensions = { "coc-discord-rpc" }
+    end
   },
 }
