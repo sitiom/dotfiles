@@ -1,4 +1,5 @@
 {
+  "coc.preferences.extensionUpdateCheck": "weekly",
   "rpc.buttonEnabled": false,
   "rpc.detailsEditing": "Insert mode {problems}",
   "rpc.detailsViewing": "Normal mode {problems}"
