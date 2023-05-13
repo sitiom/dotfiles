@@ -24,6 +24,7 @@ return {
     event = "VeryLazy",
     init = function()
       vim.g.coc_global_extensions = { "coc-discord-rpc" }
+      vim.g.coc_config_home = vim.fn.stdpath("config") .. "/lua/user"
     end
   },
 }
