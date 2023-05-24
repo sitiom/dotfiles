@@ -18,7 +18,6 @@ WatchConfiguration("enable")
 FocusFollowsMouse("disable", "windows")
 MouseFollowsFocus("disable")
 CrossMonitorMoveBehaviour("insert")
-AltFocusHack("enable")
 WindowHidingBehaviour("cloak")
 
 Loop monitorCount {
