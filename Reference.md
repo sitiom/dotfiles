@@ -1,4 +1,5 @@
 ## Prerequisites
+
 - bat
 - delta
 - fzf
@@ -9,20 +10,25 @@
 - npm
 
 ### Linux
+
 - sheldon
 - zsh
 
 ### Windows
+
 - oh-my-posh
 - clink
+- whkd
 
 ### Node
+
 - [czg](https://cz-git.qbb.sh/cli/)
   - @commitlint/config-conventional
 
 ### PowerShell
 
 #### Modules
+
 - PSFzf
 - PSReadLine
 - Terminal-Icons
