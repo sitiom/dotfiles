@@ -18,7 +18,6 @@
 
 - oh-my-posh
 - clink
-- whkd
 
 ### Node
 

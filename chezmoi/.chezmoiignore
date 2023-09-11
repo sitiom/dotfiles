@@ -13,5 +13,6 @@ komorebi.ahk
 .zshrc
 
 !.config/git/
+!.config/komorebi/
 {{ end }}
 
