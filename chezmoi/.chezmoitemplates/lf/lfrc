@@ -1,5 +1,5 @@
 # Basic Settings
-set hidden off
+set hidden
 set incsearch
 set drawbox
 set icons
