@@ -1,7 +1,6 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 #Include komorebic.lib.ahk ; Generate with 'komorebic ahk-library'
-#Include komorebi.generated.ahk ; Application configuration rules. Generated with 'komorebic ahk-app-specific-configuration'
 
 ;
 ; Variables
@@ -14,24 +13,10 @@ monitorCount := MonitorGetCount()
 ; Options
 ;
 
-WatchConfiguration("enable")
-FocusFollowsMouse("disable", "windows")
-MouseFollowsFocus("disable")
-CrossMonitorMoveBehaviour("insert")
-AltFocusHack("enable")
-WindowHidingBehaviour("cloak")
-
 Loop monitorCount {
   monitorIndex := A_Index - 1
   EnsureWorkspaces(monitorIndex, workspaceCount)
-  Loop workspaceCount {
-    workspaceIndex := A_Index - 1
-    ContainerPadding(monitorIndex, workspaceIndex, 3)
-    WorkspacePadding(monitorIndex, workspaceIndex, 3)
-  }
 }
-
-CompleteConfiguration()
 
 ;
 ; Keybindings
@@ -62,7 +47,7 @@ CompleteConfiguration()
   Resize("up", "increase")
   Resize("down", "decrease")
 }
-^#!l::{
+^#!l:: {
   Resize("right", "increase")
   Resize("left", "decrease")
 }
@@ -106,9 +91,9 @@ CompleteConfiguration()
 
 Loop workspaceCount {
   ; Switch to workspace,  Alt + 1~9
-  Hotkey "!" A_Index, (key) => FocusWorkspace(Integer(SubStr(key, 2)) - 1) , "On"
+  Hotkey "!" A_Index, (key) => FocusWorkspace(Integer(SubStr(key, 2)) - 1), "On"
   ; Move window to workspace, Alt + Shift + 1~9
-  Hotkey "!+" A_Index, (key) => MoveToWorkspace(Integer(SubStr(key, 3)) - 1) , "On"
+  Hotkey "!+" A_Index, (key) => MoveToWorkspace(Integer(SubStr(key, 3)) - 1), "On"
 }
 
 ;
