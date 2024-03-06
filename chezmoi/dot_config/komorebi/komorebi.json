@@ -7,5 +7,6 @@
   "mouse_follows_focus": false,
   "active_window_border": false,
   "default_container_padding": 3,
-  "default_workspace_padding": 3
+  "default_workspace_padding": 3,
+  "border_width": 2
 }
