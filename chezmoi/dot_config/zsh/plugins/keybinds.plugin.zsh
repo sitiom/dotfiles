@@ -1,2 +1,2 @@
-bindkey -s '^o' 'lfcd\n'
+bindkey -s '^o' 'y\n'
 

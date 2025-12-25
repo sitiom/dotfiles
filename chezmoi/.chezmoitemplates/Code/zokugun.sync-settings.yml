@@ -1,5 +1,0 @@
-hostname: "dotfiles"
-profile: main
-repository:
-  type: file
-  path: ~/.local/share/chezmoi/Codium
