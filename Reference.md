@@ -3,7 +3,7 @@
 - bat
 - delta
 - fzf
-- lf
+- yazi
 - zoxide
 - kitty
 - python
