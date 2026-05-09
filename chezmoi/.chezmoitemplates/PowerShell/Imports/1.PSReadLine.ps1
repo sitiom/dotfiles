@@ -10,7 +10,7 @@ function OnViModeChange {
     }
 }
 
-try { Set-PSReadLineOption -PredictionSource History } catch {}
+Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
 
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $function:OnViModeChange
