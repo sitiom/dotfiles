@@ -18,6 +18,8 @@ Loop monitorCount {
   EnsureWorkspaces(monitorIndex, workspaceCount)
 }
 
+CompleteConfiguration()
+
 ;
 ; Keybindings
 ;
