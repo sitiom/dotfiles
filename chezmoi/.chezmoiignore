@@ -3,6 +3,7 @@ AppData/
 OneDrive/
 Documents/PowerShell/
 komorebi.ahk
+!.config/yasb/
 {{ end }}
 
 # Unix stuff here
