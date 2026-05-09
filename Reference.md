@@ -8,6 +8,7 @@
 - kitty
 - python
 - npm
+- luajit
 
 ### Linux
 
