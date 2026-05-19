@@ -40,10 +40,10 @@ widgets:
       label: "{win[title]}"
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
-      label_icon: false
+      label_icon: true
       label_icon_size: 14
-      monitor_exclusive: false
-      max_length: 30
+      monitor_exclusive: true
+      max_length: 45
       max_length_ellipsis: "..."
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
