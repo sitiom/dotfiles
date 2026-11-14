@@ -1,1 +1,1 @@
-oh-my-posh --init --shell pwsh --config "$(Split-Path (Get-Command oh-my-posh).Path)\..\themes\iterm2.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config 'iterm2' | Invoke-Expression
